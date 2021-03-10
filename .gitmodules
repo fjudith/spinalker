@@ -1,3 +1,6 @@
 [submodule "src/dump_manager"]
 	path = src/dump_manager
 	url = https://github.com/spinalcom/spinal-organ-dump_manager
+[submodule "src/spinal-browser-graph-inspector"]
+	path = src/spinal-browser-graph-inspector
+	url = https://github.com/spinalcom/spinal-browser-graph-inspector
