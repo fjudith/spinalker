@@ -16,3 +16,18 @@
 [submodule "src/spinal-organ-dump_manager"]
 	path = src/spinal-organ-dump_manager
 	url = https://github.com/spinalcom/spinal-organ-dump_manager
+[submodule "src/spinal-env-viewer-plugin-forge"]
+	path = src/spinal-env-viewer-plugin-forge
+	url = https://github.com/spinalcom/spinal-env-viewer-plugin-forge
+[submodule "src/spinal-env-viewer-plugin-graph_viewer"]
+	path = src/spinal-env-viewer-plugin-graph_viewer
+	url = https://github.com/spinalcom/spinal-env-viewer-plugin-graph_viewer
+[submodule "src/spinal-env-viewer-plugin-item_model_selector"]
+	path = src/spinal-env-viewer-plugin-item_model_selector
+	url = https://github.com/spinalcom/spinal-env-viewer-plugin-item_model_selector
+[submodule "src/spinal-organ-network_sample"]
+	path = src/spinal-organ-network_sample
+	url = https://github.com/spinalcom/spinal-organ-network_sample
+[submodule "src/spinal-spatial-referential-service"]
+	path = src/spinal-spatial-referential-service
+	url = https://github.com/spinalcom/spinal-spatial-referential-service
