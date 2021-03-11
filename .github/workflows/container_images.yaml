@@ -5,12 +5,12 @@ on:
   paths:
     - 'src/**'
     - 'test/**'
-    - '.github/workflows/api_container_images.yaml'
+    - '.github/workflows/container_images.yaml'
   pull_request:
     paths:
     - 'src/**'
     - 'test/**'
-    - '.github/workflows/api_container_images.yaml'
+    - '.github/workflows/container_images.yaml'
 
 env:
   DOCKER_REPO: "fjudith"
