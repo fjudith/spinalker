@@ -25,8 +25,13 @@ jobs:
     strategy:
       matrix:
         image:
-          - spinal-organ-dump_manager
           - spinal-browser-graph-inspector
+          - spinal-browser-spinaltwin
+          - spinal-env-drive-plugin-digital_twin
+          - spinal-env-viewer-context-geographic-service
+          - spinal-env-viewer-plugin-documentation-service
+          - spinal-env-viewer-plugin-forge
+          - spinal-organ-dump_manager
 
     steps:
       - uses: FranzDiebold/github-env-vars-action@v1.2.1
