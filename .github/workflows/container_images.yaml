@@ -32,6 +32,7 @@ jobs:
           - spinal-env-viewer-plugin-documentation-service
           - spinal-env-viewer-plugin-forge
           - spinal-organ-dump_manager
+          - spinal-env-viewer-plugin-generate-spatial-reference
 
     steps:
       - uses: FranzDiebold/github-env-vars-action@v1.2.1
