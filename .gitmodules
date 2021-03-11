@@ -13,3 +13,6 @@
 [submodule "src/spinal-env-viewer-plugin-documentation-service"]
 	path = src/spinal-env-viewer-plugin-documentation-service
 	url = https://github.com/spinalcom/spinal-env-viewer-plugin-documentation-service
+[submodule "src/spinal-organ-dump_manager"]
+	path = src/spinal-organ-dump_manager
+	url = https://github.com/spinalcom/spinal-organ-dump_manager
