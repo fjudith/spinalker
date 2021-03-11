@@ -4,3 +4,15 @@
 [submodule "src/spinal-browser-graph-inspector"]
 	path = src/spinal-browser-graph-inspector
 	url = https://github.com/spinalcom/spinal-browser-graph-inspector
+[submodule "src/spinal-browser-spinaltwin"]
+	path = src/spinal-browser-spinaltwin
+	url = https://github.com/spinalcom/spinal-browser-spinaltwin
+[submodule "src/spinal-env-drive-plugin-digital_twin"]
+	path = src/spinal-env-drive-plugin-digital_twin
+	url = https://github.com/spinalcom/spinal-env-drive-plugin-digital_twin
+[submodule "src/spinal-env-viewer-context-geographic-service"]
+	path = src/spinal-env-viewer-context-geographic-service
+	url = https://github.com/spinalcom/spinal-env-viewer-context-geographic-service
+[submodule "src/spinal-env-viewer-plugin-documentation-service"]
+	path = src/spinal-env-viewer-plugin-documentation-service
+	url = https://github.com/spinalcom/spinal-env-viewer-plugin-documentation-service
