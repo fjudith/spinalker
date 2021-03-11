@@ -66,14 +66,14 @@ jobs:
         with:
           context: ./containers/${{ matrix.image }}
           load: true
-          tags: docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_MAJOR }},docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_MINOR }},docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_PATCH }},docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_TAG }},docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:latest
+          tags: docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_MAJOR }},docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_MINOR }},docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_PATCH }},docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_TAG }},docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:latest,docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ github.sha }}
           file: ./containers/${{ matrix.image }}/Dockerfile
           platforms: linux/amd64
       
-      - name: Run Trivy vulnerability scanner before Dockerhub
+      - name: Scan vulnerabilities before Dockerhub
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_TAG }}
+          image-ref: docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ github.sha }}
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
