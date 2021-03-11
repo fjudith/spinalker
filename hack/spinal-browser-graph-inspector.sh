@@ -1,0 +1,1 @@
+docker container run --rm --name spinal-browser-graph-inspector fjudith/spinal-browser-graph-inspector

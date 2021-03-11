@@ -1,0 +1,1 @@
+docker container run --rm --name spinal-env-viewer-context-geographic-service fjudith/spinal-env-viewer-context-geographic-service
