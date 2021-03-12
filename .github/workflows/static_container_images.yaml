@@ -1,4 +1,4 @@
-name: API Container Images
+name: Container Images (submodules)
 
 on:
  push:
@@ -6,13 +6,13 @@ on:
     - 'src/**'
     - 'test/**'
     - 'containers/**'
-    - '.github/workflows/container_images.yaml'
+    - '.github/workflows/static_container_images.yaml'
   pull_request:
     paths:
     - 'src/**'
     - 'test/**'
     - 'containers/**'
-    - '.github/workflows/container_images.yaml'
+    - '.github/workflows/static_container_images.yaml'
 
 env:
   DOCKER_REPO: "fjudith"
@@ -25,15 +25,7 @@ jobs:
     strategy:
       matrix:
         image:
-          - spinal-browser-graph-inspector
-          - spinal-browser-spinaltwin
-          - spinal-env-drive-plugin-digital_twin
-          - spinal-env-viewer-context-geographic-service
-          - spinal-env-viewer-plugin-documentation-service
-          - spinal-env-viewer-plugin-forge
-          - spinal-organ-dump_manager
-          - spinal-env-viewer-plugin-generate-spatial-reference
-          - spinal-env-viewer-plugin-graph_viewer
+          - http
           - spinal-organ-api-gateway
 
     steps:
@@ -41,6 +33,10 @@ jobs:
 
       - name: Checkout code base
         uses: actions/checkout@v2
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
+        with:
+          remote: true
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -72,7 +68,7 @@ jobs:
         id: container_image_build
         uses: docker/build-push-action@v2
         with:
-          context: ./containers/${{ matrix.image }}
+          context: ./src/${{ matrix.image }}
           load: true
           tags: docker.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ github.sha }}
           file: ./containers/${{ matrix.image }}/Dockerfile
