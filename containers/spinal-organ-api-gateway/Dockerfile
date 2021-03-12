@@ -11,7 +11,7 @@ COPY ./.env spinal-organ-api-gateway/.env
 COPY ./.yo-rc.json spinal-organ-api-gateway/.yo-rc.json
 COPY ./index.js spinal-organ-api-gateway/index.js
 COPY ./logger.js spinal-organ-api-gateway/logger.js
-COPY ./package-lock.json spinal-organ-api-gateway/package-lock.json
+# COPY ./package-lock.json spinal-organ-api-gateway/package-lock.json
 COPY ./package.json spinal-organ-api-gateway/package.json 
 COPY ./config spinal-organ-api-gateway/config
 COPY ./public spinal-organ-api-gateway/public
