@@ -1,28 +1,11 @@
-FROM node:12-buster-slim as builder
+FROM node:12-alpine as builder
 
 ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-# RUN apk add --update --no-cache git && \
-#     git --version
-
-# RUN apt-get update -yq && apt-get install -yq \
-#     git \
-#     nodejs \
-#     npm && \
-#     apt-get autoremove -yqq --purge && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/* && \
-#     ln -s /usr/bin/nodejs /usr/local/bin/node && \
-#     ln -s /usr/bin/npm /usr/local/bin/npm
-
-RUN apt-get update -yq && apt-get install -yq \
-    git && \
-    apt-get autoremove -yqq --purge && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
+RUN apk add --update --no-cache git && \
+    git --version
 
 COPY ./.env spinal-organ-api-gateway/.env
 COPY ./.yo-rc.json spinal-organ-api-gateway/.yo-rc.json
