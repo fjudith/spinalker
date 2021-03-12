@@ -22,4 +22,4 @@ COPY ./uploads spinal-organ-api-gateway/uploads
 WORKDIR ${APP_PATH}/spinal-organ-api-gateway
 
 RUN ["npm", "install"]
-RUN ["npm", "run"]
+CMD ["node", "index.js"]
