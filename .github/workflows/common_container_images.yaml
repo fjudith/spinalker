@@ -34,6 +34,7 @@ jobs:
           - spinal-organ-dump_manager
           - spinal-env-viewer-plugin-generate-spatial-reference
           - spinal-env-viewer-plugin-graph_viewer
+          - spinal-env-viewer-plugin-item_model_selector
           - spinal-organ-network_sample
 
     steps:
