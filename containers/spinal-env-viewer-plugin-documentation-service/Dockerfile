@@ -1,10 +1,14 @@
-FROM node:12-alpine as builder
+FROM node:12-buster-slim as builder
 
 ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-RUN apk add --update --no-cache git python build-base && \
+RUN apt-get update -yq && apt-get install -yq \
+    git && \
+    apt-get autoremove -yqq --purge && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
     git clone https://github.com/spinalcom/spinal-env-viewer-plugin-documentation-service && \
     git clone https://github.com/spinalcom/spinal-core-system && \
     ln -s $(pwd)/spinal-core-system/spinal-register.js /usr/local/bin/spinal-register && \
