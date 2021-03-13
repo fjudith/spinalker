@@ -30,6 +30,7 @@ jobs:
           - spinal-browser-drive
           - spinal-browser-graph-inspector
           - spinal-browser-spinaltwin
+          - spinal-browser-user_role_manager
           - spinal-env-drive-plugin-digital_twin
           - spinal-env-viewer-context-geographic-service
           - spinal-env-viewer-plugin-documentation-service
