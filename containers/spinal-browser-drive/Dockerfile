@@ -16,3 +16,26 @@ RUN apk add --update --no-cache git && \
     yarn install
 
 WORKDIR ${APP_PATH}/spinal-browser-drive
+
+# -----------------------------------------------
+# Production
+# -----------------------------------------------
+FROM keymetrics/pm2:12-alpine
+
+ENV APP_PATH="/usr/share"
+
+WORKDIR ${APP_PATH}
+
+COPY --from=builder ${APP_PATH}/spinal-core-system/ ${APP_PATH}/spinal-core-system
+
+WORKDIR ${APP_PATH}/spinal-browser-drive
+
+COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
+COPY ./scripts/launch.config.js ./launch.config.js
+COPY ./scripts/entrypoint.sh ./entrypoint.sh
+
+RUN chmod + ./entrypoint.sh
+
+ENTRYPOINT [ "./entrypoint.sh" ]
+
+CMD ["pm2-runtime", "start", "launch.config.js"]
