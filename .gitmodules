@@ -37,3 +37,6 @@
 [submodule "src/spinal-browser-appstore"]
 	path = src/spinal-browser-appstore
 	url = https://github.com/spinalcom/spinal-browser-appstore
+[submodule "src/spinal-browser-drive"]
+	path = src/spinal-browser-drive
+	url = https://github.com/spinalcom/spinal-browser-drive
