@@ -5,14 +5,14 @@ ENV APP_PATH="/usr/share"
 WORKDIR ${APP_PATH}
 
 RUN apk add --update --no-cache git && \
-    git clone https://github.com/spinalcom/spinal-browser-admin && \
+    git clone https://github.com/spinalcom/spinal-browser-drive && \
     git clone https://github.com/spinalcom/spinal-core-system && \
     ln -s $(pwd)/spinal-core-system/spinal-register.js /usr/local/bin/spinal-register && \
     cd ${APP_PATH}/spinal-core-system && \
     yarn install && \
-    cd ${APP_PATH}/spinal-browser-admin && \
+    cd ${APP_PATH}/spinal-browser-drive && \
     yarn install
 
-WORKDIR ${APP_PATH}/spinal-browser-admin
+WORKDIR ${APP_PATH}/spinal-browser-drive
 
 RUN ["npm", "run", "build"]

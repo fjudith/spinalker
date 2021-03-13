@@ -27,6 +27,7 @@ jobs:
         image:
           - spinal-browser-admin
           - spinal-browser-appstore
+          - spinal-browser-drive
           - spinal-browser-graph-inspector
           - spinal-browser-spinaltwin
           - spinal-env-drive-plugin-digital_twin
