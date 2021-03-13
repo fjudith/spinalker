@@ -5,6 +5,7 @@ ENV APP_PATH="/usr/share"
 WORKDIR ${APP_PATH}
 
 RUN apk add --update --no-cache git openssh && \
+    mkdir -p ~/.ssh && \
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts && \
     git clone https://github.com/spinalcom/spinal-browser-user_role_manager && \
     git clone https://github.com/spinalcom/spinal-core-system && \
