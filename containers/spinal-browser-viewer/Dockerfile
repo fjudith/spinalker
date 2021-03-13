@@ -17,4 +17,25 @@ WORKDIR ${APP_PATH}/spinal-browser-viewer
 
 RUN ["npm", "run", "build"]
 
-CMD ["node", "bin/watch.js"]
+# -----------------------------------------------
+# Production
+# -----------------------------------------------
+FROM keymetrics/pm2:12-alpine
+
+ENV APP_PATH="/usr/share"
+
+WORKDIR ${APP_PATH}
+
+COPY --from=builder ${APP_PATH}/spinal-browser-viewer/ ${APP_PATH}/spinal-browser-viewer/
+
+WORKDIR ${APP_PATH}/spinal-browser-viewer
+
+COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
+COPY ./scripts/launch.config.js ./launch.config.js
+COPY ./scripts/entrypoint.sh ./entrypoint.sh
+
+RUN chmod + ./entrypoint.sh
+
+ENTRYPOINT [ "./entrypoint.sh" ]
+
+CMD ["pm2-runtime", "start", "launch.config.js"]

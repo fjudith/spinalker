@@ -26,7 +26,7 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-COPY --from=builder ${APP_PATH}/spinal-core-system/ ${APP_PATH}/spinal-core-system
+COPY --from=builder ${APP_PATH}/spinal-core-system/ ${APP_PATH}/spinal-core-system/
 
 WORKDIR ${APP_PATH}/spinal-browser-drive
 
