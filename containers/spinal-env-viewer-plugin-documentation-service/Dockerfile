@@ -19,4 +19,6 @@ RUN apt-get update -yq && apt-get install -yq \
 
 WORKDIR ${APP_PATH}/spinal-env-viewer-plugin-documentation-service
 
-RUN ["npm", "run"]
+RUN ["npm", "run", "build"]
+
+CMD ["node", "dist/index.js"]

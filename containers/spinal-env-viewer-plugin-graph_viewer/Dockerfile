@@ -15,4 +15,4 @@ RUN apk add --update --no-cache git && \
 
 WORKDIR ${APP_PATH}/spinal-env-viewer-plugin-graph_viewer
 
-RUN ["npm", "run"]
+CMD ["node", "index.js"]

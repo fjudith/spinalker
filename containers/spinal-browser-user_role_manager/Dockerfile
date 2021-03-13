@@ -16,3 +16,5 @@ RUN apk add --update --no-cache git && \
 WORKDIR ${APP_PATH}/spinal-browser-user_role_manager
 
 RUN ["npm", "run", "build"]
+
+CMD ["node", "index.js"]

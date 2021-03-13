@@ -19,4 +19,4 @@ RUN apt-get update -yq && apt-get install -yq \
 
 WORKDIR ${APP_PATH}/spinal-env-viewer-plugin-generate-spatial-reference
 
-RUN ["npm", "run"]
+CMD ["node", "index.js"]

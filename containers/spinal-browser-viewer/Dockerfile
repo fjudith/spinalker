@@ -16,3 +16,5 @@ RUN apk add --update --no-cache git && \
 WORKDIR ${APP_PATH}/spinal-browser-viewer
 
 RUN ["npm", "run", "build"]
+
+CMD ["node", "bin/watch.js"]

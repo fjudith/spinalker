@@ -19,4 +19,6 @@ RUN apt-get update -yq && apt-get install -yq \
 
 WORKDIR ${APP_PATH}/spinal-organ-network_sample
 
-RUN ["npm", "run"]
+RUN ["npm", "run", "build"]
+
+CMD ["node", "dist/index.js"]

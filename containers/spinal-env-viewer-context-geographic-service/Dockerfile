@@ -11,4 +11,6 @@ RUN apk add --update --no-cache git && \
 
 WORKDIR ${APP_PATH}/spinal-env-viewer-context-geographic-service
 
-RUN ["npm", "run"]
+RUN ["npm", "run", "build"]
+
+CMD ["node", "build/index.js"]

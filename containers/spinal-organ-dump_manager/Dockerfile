@@ -14,3 +14,5 @@ RUN apk add --update --no-cache git && \
     yarn install
 
 WORKDIR ${APP_PATH}/spinal-organ-dump_manager
+
+CMD ["node", "index.js"]

@@ -11,4 +11,4 @@ RUN apk add --update --no-cache git && \
 
 WORKDIR ${APP_PATH}/spinal-env-viewer-plugin-forge
 
-RUN ["npm", "run"]
+CMD ["node", "dist/index.js"]

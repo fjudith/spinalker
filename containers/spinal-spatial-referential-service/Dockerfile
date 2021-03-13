@@ -15,4 +15,4 @@ RUN apk add --update --no-cache git && \
 
 WORKDIR ${APP_PATH}/spinal-spatial-referential-service
 
-RUN ["npm", "run"]
+CMD ["node", "dist/index.js"]

@@ -16,4 +16,6 @@ RUN apk add --update --no-cache git python build-base && \
 
 WORKDIR ${APP_PATH}/spinal-env-drive-plugin-digital_twin
 
-RUN ["npm", "run"]
+RUN ["npm", "run", "build"]
+
+CMD ["node", "index.js"]

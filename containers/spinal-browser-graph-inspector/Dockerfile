@@ -16,3 +16,5 @@ RUN apk add --update --no-cache git python build-base && \
 WORKDIR ${APP_PATH}/Spinal-browser-graph-inspector
 
 RUN ["npm", "run", "build"]
+
+CMD ["node", "index.js"]

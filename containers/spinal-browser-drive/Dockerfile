@@ -16,3 +16,5 @@ RUN apk add --update --no-cache git && \
     yarn install
 
 WORKDIR ${APP_PATH}/spinal-browser-drive
+
+RUN ["npm", "run", "compile"]

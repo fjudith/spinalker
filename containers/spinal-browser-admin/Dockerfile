@@ -15,3 +15,5 @@ RUN apk add --update --no-cache git && \
     yarn install
 
 WORKDIR ${APP_PATH}/spinal-browser-admin
+
+RUN ["npm", "run", "compile"]
