@@ -40,3 +40,6 @@
 [submodule "src/spinal-browser-drive"]
 	path = src/spinal-browser-drive
 	url = https://github.com/spinalcom/spinal-browser-drive
+[submodule "src/spinal-browser-user_role_manager"]
+	path = src/spinal-browser-user_role_manager
+	url = https://github.com/spinalcom/spinal-browser-user_role_manager
