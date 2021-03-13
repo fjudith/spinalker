@@ -4,17 +4,15 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-RUN apk add --update --no-cache git python build-base && \
-    git clone https://github.com/spinalcom/Spinal-browser-graph-inspector && \
+RUN apk add --update --no-cache git && \
+    git clone https://github.com/spinalcom/spinal-organ-dump_manager && \
     git clone https://github.com/spinalcom/spinal-core-system && \
     ln -s $(pwd)/spinal-core-system/spinal-register.js /usr/local/bin/spinal-register && \
     cd ${APP_PATH}/spinal-core-system && \
     yarn install && \
-    cd ${APP_PATH}/Spinal-browser-graph-inspector && \
+    cd ${APP_PATH}/spinal-organ-dump_manager && \
     yarn install
 
-WORKDIR ${APP_PATH}/Spinal-browser-graph-inspector
+WORKDIR ${APP_PATH}/spinal-organ-dump_manager
 
-RUN ["npm", "build"]
-
-CMD ["node", "src"]
+RUN ["npm", "run"]

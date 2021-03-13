@@ -11,4 +11,5 @@ COPY ./package.json http/package.json
 WORKDIR ${APP_PATH}/http
 
 RUN ["npm", "install"]
-RUN ["npm", "run"]
+
+CMD ["node", "index.js"]
