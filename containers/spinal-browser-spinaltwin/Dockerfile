@@ -11,4 +11,4 @@ RUN apk add --update --no-cache git && \
 
 WORKDIR ${APP_PATH}/spinal-browser-spinaltwin
 
-RUN ["npm", "run"]
+RUN ["npm", "run", "build"]
