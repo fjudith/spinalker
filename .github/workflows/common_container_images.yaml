@@ -26,6 +26,7 @@ jobs:
       matrix:
         image:
           - spinal-browser-admin
+          - spinal-browser-appstore
           - spinal-browser-graph-inspector
           - spinal-browser-spinaltwin
           - spinal-env-drive-plugin-digital_twin
