@@ -31,3 +31,6 @@
 [submodule "src/spinal-spatial-referential-service"]
 	path = src/spinal-spatial-referential-service
 	url = https://github.com/spinalcom/spinal-spatial-referential-service
+[submodule "src/spinal-browser-admin"]
+	path = src/spinal-browser-admin
+	url = https://github.com/spinalcom/spinal-browser-admin
