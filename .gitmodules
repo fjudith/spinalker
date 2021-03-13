@@ -34,3 +34,6 @@
 [submodule "src/spinal-browser-admin"]
 	path = src/spinal-browser-admin
 	url = https://github.com/spinalcom/spinal-browser-admin
+[submodule "src/spinal-browser-appstore"]
+	path = src/spinal-browser-appstore
+	url = https://github.com/spinalcom/spinal-browser-appstore
