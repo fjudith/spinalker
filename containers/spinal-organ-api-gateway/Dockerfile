@@ -22,4 +22,29 @@ COPY ./uploads spinal-organ-api-gateway/uploads
 WORKDIR ${APP_PATH}/spinal-organ-api-gateway
 
 RUN ["npm", "install"]
-CMD ["node", "index.js"]
+
+# -----------------------------------------------
+# Production
+# -----------------------------------------------
+FROM keymetrics/pm2:12-alpine
+
+ENV APP_PATH="/usr/share"
+
+WORKDIR ${APP_PATH}
+
+COPY --from=builder ${APP_PATH}/spinal-organ-api-gateway ${APP_PATH}/spinal-organ-api-gateway/
+
+WORKDIR ${APP_PATH}/spinal-organ-api-gateway
+
+COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
+COPY ./scripts/launch.config.js ./launch.config.js
+COPY ./scripts/entrypoint.sh ./entrypoint.sh
+
+RUN chmod +x ./entrypoint.sh && \
+    ln -s $(pwd)/nerve-center/spinalhub /spinalhub
+
+ENTRYPOINT [ "./entrypoint.sh" ]
+
+EXPOSE 8888 8889 8890
+
+CMD ["pm2-runtime", "start", "launch.config.js"]
