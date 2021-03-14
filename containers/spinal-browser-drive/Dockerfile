@@ -11,9 +11,9 @@ RUN apk add --update --no-cache git && \
     git clone https://github.com/spinalcom/spinal-core-system && \
     ln -s $(pwd)/spinal-core-system/spinal-register.js /usr/local/bin/spinal-register && \
     cd ${APP_PATH}/spinal-core-system && \
-    yarn install && \
+    npm install && \
     cd ${APP_PATH}/spinal-browser-drive && \
-    yarn install
+    npm install
 
 WORKDIR ${APP_PATH}/spinal-browser-drive
 
@@ -26,7 +26,7 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-COPY --from=builder ${APP_PATH}/spinal-core-system/ ${APP_PATH}/spinal-core-system/
+COPY --from=builder ${APP_PATH}/spinal-browser-drive ${APP_PATH}/spinal-browser-drive/
 
 WORKDIR ${APP_PATH}/spinal-browser-drive
 
@@ -34,8 +34,11 @@ COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
 COPY ./scripts/launch.config.js ./launch.config.js
 COPY ./scripts/entrypoint.sh ./entrypoint.sh
 
-RUN chmod +x ./entrypoint.sh
+RUN chmod +x ./entrypoint.sh && \
+    ln -s $(pwd)/nerve-center/spinalhub /spinalhub
 
 ENTRYPOINT [ "./entrypoint.sh" ]
+
+EXPOSE 8888 8889 8890
 
 CMD ["pm2-runtime", "start", "launch.config.js"]
