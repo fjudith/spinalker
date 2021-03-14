@@ -52,3 +52,6 @@
 [submodule "src/spinal-organ-forge"]
 	path = src/spinal-organ-forge
 	url = https://github.com/spinalcom/spinal-organ-forge
+[submodule "src/spinal-core-hub"]
+	path = src/spinal-core-hub
+	url = https://github.com/spinalcom/spinal-core-hub
