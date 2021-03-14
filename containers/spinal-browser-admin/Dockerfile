@@ -10,9 +10,9 @@ RUN apk add --update --no-cache git && \
     ln -s $(pwd)/spinal-core-system/spinal-register.js /usr/local/bin/spinal-register && \
     ln -s $(pwd)/spinal-browser-admin/create_admin_env.js /usr/local/bin/create_admin_env && \
     cd ${APP_PATH}/spinal-core-system && \
-    yarn install && \
+    npm install && \
     cd ${APP_PATH}/spinal-browser-admin && \
-    yarn install
+    npm install
 
 WORKDIR ${APP_PATH}/spinal-browser-admin
 
