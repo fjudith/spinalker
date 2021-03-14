@@ -49,3 +49,6 @@
 [submodule "src/spinal-env-viewer-plugin-generate-spatial-reference"]
 	path = src/spinal-env-viewer-plugin-generate-spatial-reference
 	url = https://github.com/spinalcom/spinal-env-viewer-plugin-generate-spatial-reference
+[submodule "src/spinal-organ-forge"]
+	path = src/spinal-organ-forge
+	url = https://github.com/spinalcom/spinal-organ-forge
