@@ -49,6 +49,11 @@ jobs:
       - name: Set ENV variables
         run: |
           cat ./containers/${{ matrix.image }}/.env >> $GITHUB_ENV
+
+      - name: Copy Container resources
+        run: |
+          cp -vr ./containers/${{ matrix.image }}/templates ./src/${{ matrix.image }}/
+          cp -vr ./containers/${{ matrix.image }}/scripts ./src/${{ matrix.image }}/
       
       - name: Login to DockerHub
         uses: docker/login-action@v1 
