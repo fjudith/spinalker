@@ -17,18 +17,18 @@ SPINAL_CLIENT_SECRET=${SPINAL_CLIENT_SECRET:-"35GBJWY4wvdUUZQQ"}
 
 # Build configuration file, only if not mounted
 # -----------------------------------------------
-if ! ls ${APP_PATH}/spinal-browser-drive/.config.json; then
-    cp /tmp/.config.json.tpl ${APP_PATH}/spinal-browser-drive/.config.json && \
-    sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/__SPINALHUB_IP__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/__SPINAL_USER_ID__/${SPINAL_USER_ID}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/__SPINAL_PASSWORD__/${SPINAL_PASSWORD}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/__SPINAL_PASSWORD_ROOT__/${SPINAL_PASSWORD_ROOT}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/__SPINAL_PASSWORD_USER__/${SPINAL_PASSWORD_USER}/g" ${APP_PATH}/spinal-browser-drive/.config.json
+if ! ls ${APP_PATH}/spinal-browser-viewer/.config.json; then
+    cp /tmp/.config.json.tpl ${APP_PATH}/spinal-browser-viewer/.config.json && \
+    sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-browser-viewer/.config.json
+    sed -i "s/__SPINALHUB_IP__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-browser-viewer/.config.json
+    sed -i "s/__SPINAL_USER_ID__/${SPINAL_USER_ID}/g" ${APP_PATH}/spinal-browser-viewer/.config.json
+    sed -i "s/__SPINAL_PASSWORD__/${SPINAL_PASSWORD}/g" ${APP_PATH}/spinal-browser-viewer/.config.json
+    sed -i "s/__SPINAL_PASSWORD_ROOT__/${SPINAL_PASSWORD_ROOT}/g" ${APP_PATH}/spinal-browser-viewer/.config.json
+    sed -i "s/__SPINAL_PASSWORD_USER__/${SPINAL_PASSWORD_USER}/g" ${APP_PATH}/spinal-browser-viewer/.config.json
 
-    sed -i "s/__SPINAL_INTERVAL__/${SPINAL_INTERVAL}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/__SPINAL_CLIENT_ID__/${SPINAL_CLIENT_ID}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/__SPINAL_CLIENT_SECRET__/${SPINAL_CLIENT_SECRET}/g" ${APP_PATH}/spinal-browser-drive/.config.json
+    sed -i "s/__SPINAL_INTERVAL__/${SPINAL_INTERVAL}/g" ${APP_PATH}/spinal-browser-viewer/.config.json
+    sed -i "s/__SPINAL_CLIENT_ID__/${SPINAL_CLIENT_ID}/g" ${APP_PATH}/spinal-browser-viewer/.config.json
+    sed -i "s/__SPINAL_CLIENT_SECRET__/${SPINAL_CLIENT_SECRET}/g" ${APP_PATH}/spinal-browser-viewer/.config.json
 fi
 
 exec "$@"

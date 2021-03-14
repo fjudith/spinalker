@@ -13,14 +13,14 @@ SPINAL_PASSWORD_USER=${SPINAL_PASSWORD_USER:-"jk57gZ3RE"}
 
 # Build configuration file, only if not mounted
 # -----------------------------------------------
-if ! ls ${APP_PATH}/spinal-browser-drive/.config.json; then
-    cp /tmp/.config.json.tpl ${APP_PATH}/spinal-browser-drive/.config.json && \
-    sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/__SPINALHUB_IP__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/SPINAL_USER_ID/${SPINAL_USER_ID}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/SPINAL_PASSWORD/${SPINAL_PASSWORD}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/SPINAL_PASSWORD_ROOT/${SPINAL_PASSWORD_ROOT}/g" ${APP_PATH}/spinal-browser-drive/.config.json
-    sed -i "s/SPINAL_PASSWORD_USER/${SPINAL_PASSWORD_USER}/g" ${APP_PATH}/spinal-browser-drive/.config.json
+if ! ls ${APP_PATH}/spinal-browser-admin/.config.json; then
+    cp /tmp/.config.json.tpl ${APP_PATH}/spinal-browser-admin/.config.json && \
+    sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-browser-admin/.config.json
+    sed -i "s/__SPINALHUB_IP__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-browser-admin/.config.json
+    sed -i "s/SPINAL_USER_ID/${SPINAL_USER_ID}/g" ${APP_PATH}/spinal-browser-admin/.config.json
+    sed -i "s/SPINAL_PASSWORD/${SPINAL_PASSWORD}/g" ${APP_PATH}/spinal-browser-admin/.config.json
+    sed -i "s/SPINAL_PASSWORD_ROOT/${SPINAL_PASSWORD_ROOT}/g" ${APP_PATH}/spinal-browser-admin/.config.json
+    sed -i "s/SPINAL_PASSWORD_USER/${SPINAL_PASSWORD_USER}/g" ${APP_PATH}/spinal-browser-admin/.config.json
 fi
 
 exec "$@"
