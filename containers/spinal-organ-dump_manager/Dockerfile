@@ -9,10 +9,27 @@ RUN apk add --update --no-cache git && \
     git clone https://github.com/spinalcom/spinal-core-system && \
     ln -s $(pwd)/spinal-core-system/spinal-register.js /usr/local/bin/spinal-register && \
     cd ${APP_PATH}/spinal-core-system && \
-    yarn install && \
+    npm install && \
     cd ${APP_PATH}/spinal-organ-dump_manager && \
-    yarn install
+    npm install
 
 WORKDIR ${APP_PATH}/spinal-organ-dump_manager
 
 CMD ["node", "index.js"]
+
+# -----------------------------------------------
+# Production
+# -----------------------------------------------
+FROM keymetrics/pm2:12-alpine
+
+ENV APP_PATH="/usr/share"
+
+WORKDIR ${APP_PATH}
+
+COPY --from=builder ${APP_PATH}/spinal-organ-dump_manager ${APP_PATH}/spinal-organ-dump_manager/
+
+WORKDIR ${APP_PATH}/spinal-organ-dump_manager
+
+COPY ./scripts/launch.config.js ./launch.config.js
+
+CMD ["pm2-runtime", "start", "launch.config.js"]
