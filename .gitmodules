@@ -46,3 +46,6 @@
 [submodule "src/spinal-browser-viewer"]
 	path = src/spinal-browser-viewer
 	url = https://github.com/spinalcom/spinal-browser-viewer
+[submodule "src/spinal-env-viewer-plugin-generate-spatial-reference"]
+	path = src/spinal-env-viewer-plugin-generate-spatial-reference
+	url = https://github.com/spinalcom/spinal-env-viewer-plugin-generate-spatial-reference
