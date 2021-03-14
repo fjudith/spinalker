@@ -1,4 +1,4 @@
-# Spinal Hub
+# Spinal Core Hub
 
 This folder containers contains resources to build the local IoT nerve center _(a.k.a spinal-hub )_ container
 
@@ -17,11 +17,11 @@ Due to the repository structure The build must run from the root directory for t
 Once the container image succesfully built, run the following to spawn a `spinal-hub` instance.
 
 ```bash
-docker container run --rm --name spinal-hub \
+docker container run --rm --name spinal-core-hub \
 -p "8088:8088" \
 -p "8089:8089" \
 -p "8090:8090" \
-docker.io/fjudith/spinal-hub
+docker.io/fjudith/spinal-core-hub
 ```
 
 ## Environement variables and related command arguments
