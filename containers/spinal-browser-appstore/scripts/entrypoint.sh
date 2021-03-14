@@ -17,10 +17,10 @@ if ! ls ${APP_PATH}/spinal-browser-appstore/.config.json; then
     cp /tmp/.config.json.tpl ${APP_PATH}/spinal-browser-appstore/.config.json && \
     sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
     sed -i "s/__SPINALHUB_IP__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
-    sed -i "s/SPINAL_USER_ID/${SPINAL_USER_ID}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
-    sed -i "s/SPINAL_PASSWORD/${SPINAL_PASSWORD}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
-    sed -i "s/SPINAL_PASSWORD_ROOT/${SPINAL_PASSWORD_ROOT}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
-    sed -i "s/SPINAL_PASSWORD_USER/${SPINAL_PASSWORD_USER}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
+    sed -i "s/__SPINAL_USER_ID__/${SPINAL_USER_ID}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
+    sed -i "s/__SPINAL_PASSWORD__/${SPINAL_PASSWORD}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
+    sed -i "s/__SPINAL_PASSWORD_ROOT__/${SPINAL_PASSWORD_ROOT}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
+    sed -i "s/__SPINAL_PASSWORD_USER__/${SPINAL_PASSWORD_USER}/g" ${APP_PATH}/spinal-browser-appstore/.config.json
 fi
 
 exec "$@"
