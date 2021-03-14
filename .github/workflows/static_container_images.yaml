@@ -25,7 +25,7 @@ jobs:
     strategy:
       matrix:
         image:
-          - http
+          - spinal-http-server
           - spinal-organ-api-gateway
 
     steps:
