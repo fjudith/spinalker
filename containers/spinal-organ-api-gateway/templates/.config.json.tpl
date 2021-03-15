@@ -2,19 +2,19 @@
   "spinal-core-hub": {
     "env": {
       "SPINALHUB_PORT": __SPINALHUB_PORT__,
-      "SPINALHUB_IP": "__SPINALHUB_IP__",
+      "SPINALHUB_IP": "__SPINALHUB_HOST__",
       "SPINAL_USER_ID": "__SPINAL_USER_ID__",
       "SPINAL_PASSWORD": "__SPINAL_PASSWORD__"
     },
     "env_test": {
       "SPINALHUB_PORT": __SPINALHUB_PORT__,
-      "SPINALHUB_IP": "__SPINALHUB_IP__",
+      "SPINALHUB_IP": "__SPINALHUB_HOST__",
       "SPINAL_USER_ID": "__SPINAL_USER_ID__",
       "SPINAL_PASSWORD": "__SPINAL_PASSWORD__"
     },
     "env_production": {
       "SPINALHUB_PORT": __SPINALHUB_PORT__,
-      "SPINALHUB_IP": "__SPINALHUB_IP__",
+      "SPINALHUB_IP": "__SPINALHUB_HOST__",
       "SPINAL_USER_ID": "__SPINAL_USER_ID__",
       "SPINAL_PASSWORD": "__SPINAL_PASSWORD__"
     }
