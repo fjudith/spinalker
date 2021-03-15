@@ -1,5 +1,4 @@
 FROM node:12-alpine as builder
-# FROM node:12-buster-slim as builder
 
 ENV APP_PATH="/usr/share"
 
@@ -13,25 +12,9 @@ RUN apk add --update --no-cache git && \
     npm install @types/node && \
     npm install
 
-# RUN apt-get update -yq && apt-get install -yq \
-#     git && \
-#     apt-get autoremove -yqq --purge && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/* && \
-#     git clone https://github.com/spinalcom/spinal-organ-network_sample && \
-#     git clone https://github.com/spinalcom/spinal-core-system && \
-#     ln -s $(pwd)/spinal-core-system/spinal-register.js /usr/local/bin/spinal-register && \
-#     cd ${APP_PATH}/spinal-core-system && \
-#     yarn install && \
-#     cd ${APP_PATH}/spinal-organ-network_sample && \
-#     yarn install
-
 WORKDIR ${APP_PATH}/spinal-organ-network_sample
 
-# RUN ["npm", "run", "build"]
-
-# Workaround to "npm build"
-COPY ./patch/dist ./
+RUN ["npm", "run", "build"]
 
 # -----------------------------------------------
 # Production
@@ -46,6 +29,7 @@ COPY --from=builder ${APP_PATH}/spinal-organ-network_sample ${APP_PATH}/spinal-o
 
 WORKDIR ${APP_PATH}/spinal-organ-network_sample
 
+COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
 COPY ./templates/config.json5.tpl /tmp/config.json5.tpl
 COPY ./scripts/launch.config.js ./launch.config.js
 COPY ./files/.apps.json ./.apps.json
