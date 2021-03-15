@@ -1,18 +1,27 @@
 name: Container Images (static submodules)
 
 on:
- push:
-  paths:
-    - 'src/**'
-    - 'test/**'
-    - 'containers/**'
-    - '.github/workflows/static_container_images.yaml'
+  workflow_run:
+    workflows:
+      - "Browser Container Images"
+      - "Env-Admin Container Images"
+      - "Env-Drive Container Images"
+      - "Env-Viewer Container Images"
+    branches: [master]
+    types: 
+      - completed
+  push:
+    paths:
+      - 'src/**'
+      - 'test/**'
+      - 'containers/**'
+      - '.github/workflows/static_container_images.yaml'
   pull_request:
     paths:
-    - 'src/**'
-    - 'test/**'
-    - 'containers/**'
-    - '.github/workflows/static_container_images.yaml'
+      - 'src/**'
+      - 'test/**'
+      - 'containers/**'
+      - '.github/workflows/static_container_images.yaml'
 
 env:
   DOCKER_REPO: "fjudith"

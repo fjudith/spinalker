@@ -1,18 +1,18 @@
 name: Container Images (dynamic submodules)
 
 on:
- push:
-  paths:
-    - 'src/**'
-    - 'test/**'
-    - 'containers/**'
-    - '.github/workflows/container_images.yaml'
+  push:
+    paths:
+      - 'src/**'
+      - 'test/**'
+      - 'containers/**'
+      - '.github/workflows/common_container_images.yaml'
   pull_request:
     paths:
     - 'src/**'
     - 'test/**'
     - 'containers/**'
-    - '.github/workflows/container_images.yaml'
+    - '.github/workflows/common_container_images.yaml'
 
 env:
   DOCKER_REPO: "fjudith"
