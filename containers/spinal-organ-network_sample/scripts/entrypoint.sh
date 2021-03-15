@@ -11,13 +11,13 @@ SPINAL_DTWIN_PATH=${SPINAL_DTWIN_PATH:-"/__users__/admin/deiv4"}
 
 # Build configuration file, only if not mounted
 # -----------------------------------------------
-if ! ls ${APP_PATH}/spinal-organ-network_sample/.config.json; then
-    cp /tmp/.config.json.tpl ${APP_PATH}/spinal-organ-network_sample/.config.json && \
-    sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-organ-network_sample/.config.json
-    sed -i "s/__SPINALHUB_HOST__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-organ-network_sample/.config.json
-    sed -i "s/__SPINAL_USER_ID__/${SPINAL_USER_ID}/g" ${APP_PATH}/spinal-organ-network_sample/.config.json
-    sed -i "s/__SPINAL_PASSWORD__/${SPINAL_PASSWORD}/g" ${APP_PATH}/spinal-organ-network_sample/.config.json
-    sed -i "s#__SPINAL_DTWIN_PATH__#${SPINAL_DTWIN_PATH}#g" ${APP_PATH}/spinal-organ-network_sample/.config.json
+if ! ls ${APP_PATH}/spinal-organ-network_sample/config.json5; then
+    cp /tmp/config5.json.tpl ${APP_PATH}/spinal-organ-network_sample/config.json5 && \
+    sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-organ-network_sample/config.json5
+    sed -i "s/__SPINALHUB_HOST__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-organ-network_sample/config.json5
+    sed -i "s/__SPINAL_USER_ID__/${SPINAL_USER_ID}/g" ${APP_PATH}/spinal-organ-network_sample/config.json5
+    sed -i "s/__SPINAL_PASSWORD__/${SPINAL_PASSWORD}/g" ${APP_PATH}/spinal-organ-network_sample/config.json5
+    sed -i "s#__SPINAL_DTWIN_PATH__#${SPINAL_DTWIN_PATH}#g" ${APP_PATH}/spinal-organ-network_sample/config5.json5
 fi
 
 exec "$@"

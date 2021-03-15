@@ -9,6 +9,7 @@ RUN apk add --update --no-cache git && \
     npm install --silent --save-dev -g typescript && \
     git clone https://github.com/spinalcom/spinal-organ-network_sample && \
     cd ${APP_PATH}/spinal-organ-network_sample && \
+    rm -f .config.json5 && \
     npm install @types/node && \
     npm install
 
@@ -27,7 +28,7 @@ RUN apk add --update --no-cache git && \
 
 WORKDIR ${APP_PATH}/spinal-organ-network_sample
 
-# RUN ["npm", "run", "build"]
+RUN ["npm", "run", "run"]
 
 # -----------------------------------------------
 # Production
@@ -42,7 +43,7 @@ COPY --from=builder ${APP_PATH}/spinal-organ-network_sample/ ${APP_PATH}/spinal-
 
 WORKDIR ${APP_PATH}/spinal-organ-network_sample
 
-COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
+COPY ./templates/config.json5.tpl /tmp/config.json5.tpl
 COPY ./scripts/launch.config.js ./launch.config.js
 COPY ./files/.apps.json ./.apps.json
 COPY ./scripts/entrypoint.sh ./entrypoint.sh
