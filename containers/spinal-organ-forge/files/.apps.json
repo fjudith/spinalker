@@ -1,0 +1,6 @@
+{
+    "apps": [{
+        "name": "spinal-organ-forge",
+        "script": "index.js"
+    }]
+}

@@ -1,0 +1,6 @@
+{
+    "apps": [{
+        "name": "spinal-organ-api-gateway",
+        "script": "index.js"
+    }]
+}

@@ -38,6 +38,7 @@ WORKDIR ${APP_PATH}/spinal-organ-api-gateway
 
 COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
 COPY ./scripts/launch.config.js ./launch.config.js
+COPY ./files/.apps.json ./.apps.json
 COPY ./scripts/entrypoint.sh ./entrypoint.sh
 
 RUN chmod +x ./entrypoint.sh && \

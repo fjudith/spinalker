@@ -1,0 +1,6 @@
+{
+    "apps": [{
+        "name": "dump_manager",
+        "script": "index.js"
+    }]
+}

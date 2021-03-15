@@ -31,5 +31,6 @@ COPY --from=builder ${APP_PATH}/spinal-organ-dump_manager ${APP_PATH}/spinal-org
 WORKDIR ${APP_PATH}/spinal-organ-dump_manager
 
 COPY ./scripts/launch.config.js ./launch.config.js
+COPY ./files/.apps.json ./.apps.json
 
 CMD ["pm2-runtime", "start", "launch.config.js"]

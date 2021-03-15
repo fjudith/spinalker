@@ -31,6 +31,7 @@ COPY --from=builder ${APP_PATH}/spinal-organ-forge/ ${APP_PATH}/spinal-organ-for
 WORKDIR ${APP_PATH}/spinal-organ-forge
 
 COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
+COPY ./files/.apps.json ./.apps.json
 COPY ./scripts/entrypoint.sh ./entrypoint.sh
 
 RUN chmod +x ./entrypoint.sh
