@@ -1,6 +1,6 @@
 {
-    "apps": [{
-        "name": "spinal-organ-network_sample",
-        "script": "index.js"
-    }]
+  "apps": [{
+      "name": "spinal-organ-network_sample",
+      "script": "index.js"
+  }]
 }
