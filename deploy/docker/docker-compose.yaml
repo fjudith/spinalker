@@ -6,9 +6,9 @@ services:
     networks:
       - spinalker
     expose:
-      - 8088
-      - 8089
-      - 8090
+      - 8888
+      - 8889
+      - 8890
     volumes:
       - ./memory:/usr/share/app/memory
   
@@ -18,7 +18,7 @@ services:
       - spinalker
     environment:
       SPINALHUB_HOST: spinal-core-hub
-      SPINALHUB_PORT: 8088
+      SPINALHUB_PORT: 8888
 
   spinal-organ-network_sample:
     image: docker.io/fjudith/spinal-organ-network_sample:1.0.1-alpine
@@ -26,7 +26,7 @@ services:
       - spinalker
     environment:
       SPINALHUB_HOST: spinal-core-hub
-      SPINALHUB_PORT: 8088
+      SPINALHUB_PORT: 8888
 
   spinal-organ-api-gateway:
     image: docker.io/fjudith/spinal-organ-api-gateway:1.0.0-alpine
@@ -49,7 +49,7 @@ services:
       - spinalker
     environment:
       SPINALHUB_HOST: spinal-core-hub
-      SPINALHUB_PORT: 8088   
+      SPINALHUB_PORT: 8888
   
   probe:
     image: weaveworks/scope:1.11.5

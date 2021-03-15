@@ -18,9 +18,9 @@ Once the container image succesfully built, run the following to spawn a `spinal
 
 ```bash
 docker container run --rm --name spinal-core-hub \
--p "8088:8088" \
--p "8089:8089" \
--p "8090:8090" \
+-p "8888:8888" \
+-p "8889:8889" \
+-p "8890:8890" \
 docker.io/fjudith/spinal-core-hub
 ```
 
