@@ -48,6 +48,7 @@ services:
     networks:
       - spinalker
     environment:
+      HUB_HOST: spinal-core-hub
       SPINALHUB_HOST: spinal-core-hub
       SPINALHUB_PORT: 8888
   
