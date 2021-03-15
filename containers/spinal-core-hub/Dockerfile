@@ -1,10 +1,3 @@
-FROM docker.io/fjudith/spinal-browser-admin:2.0.5-alpine as admin
-FROM docker.io/fjudith/spinal-browser-spinaltwin:1.0.4-alpine as spinaltwin
-FROM docker.io/fjudith/spinal-browser-appstore:1.0.1-alpine as appstore
-FROM docker.io/fjudith/spinal-browser-drive:2.0.8-alpine as drive
-FROM docker.io/fjudith/spinal-browser-graph-inspector:1.0.1-alpine as graph
-FROM docker.io/fjudith/spinal-browser-user_role_manager:1.1.3-alpine as user_role_manager
-
 FROM node:12-alpine as builder
 # FROM node:12-buster-slim as builder
 
@@ -47,14 +40,6 @@ RUN npm install git+https://github.com/spinalcom/spinal-core-hub
 
 COPY ./scripts/entrypoint.sh ./
 COPY ./files/package.json ./
-COPY --from=admin ${APP_PATH}/spinal-browser-admin/www ./html/admin/
-COPY --from=appstore ${APP_PATH}/spinal-browser-appstore/www ./html/appstore/
-COPY --from=drive ${APP_PATH}/spinal-browser-drive/www ./html/drive/
-COPY --from=graph ${APP_PATH}/Spinal-browser-graph-inspector ./html/graph/
-COPY --from=graph ${APP_PATH}/Spinal-browser-graph-inspector/www ./html/graph-inspector/
-COPY --from=drive ${APP_PATH}/spinal-browser-drive/icons ./html/icons/
-COPY --from=spinaltwin ${APP_PATH}/spinal-browser-spinaltwin/www ./html/spinaltwin/
-COPY --from=user_role_manager ${APP_PATH}/spinal-browser-user_role_manager/www ./html/user_role_manager/
 
 COPY ./scripts/entrypoint.sh ./entrypoint.sh
 
