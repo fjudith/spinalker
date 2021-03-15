@@ -1,4 +1,4 @@
-name: Container Images
+name: Container Images (dynamic submodules)
 
 on:
  push:
