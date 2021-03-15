@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: organ-network-sample
+  name: organ-network-sample
+  namespace: spinalcom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: organ-network-sample
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: organ-network-sample
+    spec:
+      containers:
+      - name: spinal-organ-network-sample
+        image: docker.io/fjudith/spinal-organ-network_sample:1.0.1-alpine
+        imagePullPolicy: Always
+        env:
+        - name: SPINALHUB_HOST
+          value: core-hub
+        - name: SPINALHUB_PORT
+          value: "8888"
+        resources: {}
+status: {}

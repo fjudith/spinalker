@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: http-server
+  namespace: spinalcom
+spec:
+  selector:
+    app: http-server
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8892
+      targetPort: 8892

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: organ-api-gateway
+  namespace: spinalcom
+spec:
+  selector:
+    app: organ-api-gateway
+  ports:
+    - name: http
+      protocol: TCP
+      port: 4025
+      targetPort: 4025
+    - name: request
+      protocol: TCP
+      port: 4026
+      targetPort: 4026

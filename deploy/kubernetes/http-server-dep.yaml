@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: http-server
+  name: http-server
+  namespace: spinalcom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: http-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: http-server
+    spec:
+      containers:
+      - name: spinal-http-server
+        image: docker.io/fjudith/spinal-http-server:1.0.0-alpine
+        imagePullPolicy: Always
+        ports:
+          - name: http
+            containerPort: 8892
+        resources: {}
+status: {}

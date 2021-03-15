@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: organ-forge
+  name: organ-forge
+  namespace: spinalcom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: organ-forge
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: organ-forge
+    spec:
+      containers:
+      - name: spinal-organ-forge
+        image: docker.io/fjudith/spinal-organ-forge:1.1.5-alpine
+        imagePullPolicy: Always
+        env:
+        - name: SPINALHUB_HOST
+          value: core-hub
+        - name: SPINALHUB_PORT
+          value: "8888"
+        resources: {}
+status: {}
