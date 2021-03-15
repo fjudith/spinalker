@@ -18,6 +18,7 @@ ENV APP_PATH="/usr/share" \
     GROUPID="10001"
 
 RUN addgroup -g ${GROUPID} -S ${GROUP} && adduser -u ${USERID} -G ${GROUP} -S ${GROUP} && \
+    apk add --update --no-cache curl ca-certificates && \
     mkdir -vp ${APP_PATH}/app/memory
 
 WORKDIR ${APP_PATH}/app
