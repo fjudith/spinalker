@@ -23,7 +23,7 @@ if ! ls ${APP_PATH}/spinal-organ-api-gateway/.config.json; then
     sed -i "s/__SPINAL_USER_ID__/${SPINAL_USER_ID}/g" ${APP_PATH}/spinal-organ-api-gateway/.config.json
     sed -i "s/__SPINAL_PASSWORD__/${SPINAL_PASSWORD}/g" ${APP_PATH}/spinal-organ-api-gateway/.config.json
     sed -i "s/__SPINAL_API_GATEWAY_PORT__/${SPINAL_API_GATEWAY_PORT}/g" ${APP_PATH}/spinal-organ-api-gateway/.config.json
-    sed -i "s/__SPINAL_DTWIN_PATH__/${SPINAL_DTWIN_PATH}/g" ${APP_PATH}/spinal-organ-api-gateway/.config.json
+    sed -i "s#__SPINAL_DTWIN_PATH__#${SPINAL_DTWIN_PATH}#g" ${APP_PATH}/spinal-organ-api-gateway/.config.json
     sed -i "s/__SPINAL_REQUESTS_HOST__/${SPINAL_REQUESTS_HOST}/g" ${APP_PATH}/spinal-organ-api-gateway/.config.json
     sed -i "s/__SPINAL_REQUESTS_PORT__/${SPINAL_REQUESTS_PORT}/g" ${APP_PATH}/spinal-organ-api-gateway/.config.json
 fi
