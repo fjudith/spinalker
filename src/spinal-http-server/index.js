@@ -1,6 +1,6 @@
 const path = require('path');
 // changer le path et port ici
-const absPath = '../../.browser_organs'.split('/');
+const absPath = './html/'.split('/');
 const root = path.join(__dirname, ...absPath);
 const portHub = process.env.SPINALHUB_PORT || 7080;
 const HUB_HOST = `http://localhost:${portHub}`; // modif here
