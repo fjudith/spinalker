@@ -28,7 +28,7 @@ RUN apk add --update --no-cache git && \
 
 WORKDIR ${APP_PATH}/spinal-organ-network_sample
 
-RUN ["npm", "run", "run"]
+RUN ["npm", "run", "build"]
 
 # -----------------------------------------------
 # Production
