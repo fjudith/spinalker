@@ -28,7 +28,10 @@ RUN apk add --update --no-cache git && \
 
 WORKDIR ${APP_PATH}/spinal-organ-network_sample
 
-RUN ["npm", "run", "build"]
+# RUN ["npm", "run", "build"]
+
+# Workaround to "npm build"
+COPY ./patch/dist ./
 
 # -----------------------------------------------
 # Production
@@ -39,7 +42,7 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-COPY --from=builder ${APP_PATH}/spinal-organ-network_sample/ ${APP_PATH}/spinal-organ-network_sample/
+COPY --from=builder ${APP_PATH}/spinal-organ-network_sample ${APP_PATH}/spinal-organ-network_sample/
 
 WORKDIR ${APP_PATH}/spinal-organ-network_sample
 
