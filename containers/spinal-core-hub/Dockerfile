@@ -24,12 +24,10 @@ RUN addgroup -g ${GROUPID} -S ${GROUP} && adduser -u ${USERID} -G ${GROUP} -S ${
 WORKDIR ${APP_PATH}/app
 
 # Download spinalhub binary
-#ENV SHA256="5a3b57d2ccc304b69e664a83a866e31a38f8366c65fbca8ea9b262127e607f8b"
+ENV SHA256="5a3b57d2ccc304b69e664a83a866e31a38f8366c65fbca8ea9b262127e607f8b"
 
-RUN curl -OL https://raw.githubusercontent.com/spinalcom/spinal-core-hub/master/spinalhub 
-#&& \
-#    echo "${SHA256} spinalhub" | sha256sum -c
-#TODO: Reactivate the sha sum check
+RUN curl -OL https://raw.githubusercontent.com/spinalcom/spinal-core-hub/master/spinalhub && \
+    echo "${SHA256}  spinalhub" | sha256sum -c -
 
 COPY ./scripts/entrypoint.sh ./
 
@@ -37,7 +35,7 @@ COPY ./scripts/entrypoint.sh ./entrypoint.sh
 
 RUN chmod +x ./entrypoint.sh && \
     chmod +x ${APP_PATH}/app/spinalhub && \
-    mkdir -P ${APP_PATH}/app/memory/viewerForgeFile && \
+    mkdir -vp ${APP_PATH}/app/memory/viewerForgeFile && \
     chown -R ${USER}:${GROUP} ./ 
 
 EXPOSE 8888 8889 8890
