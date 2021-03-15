@@ -58,3 +58,21 @@
 [submodule "src/spinal-browser-template"]
 	path = src/spinal-browser-template
 	url = https://github.com/spinalcom/spinal-browser-template
+[submodule "src/spinal-env-admin-panel-hub-status"]
+	path = src/spinal-env-admin-panel-hub-status
+	url = https://github.com/spinalcom/spinal-env-admin-panel-hub-status
+[submodule "src/spinal-env-admin-panel-user-manager"]
+	path = src/spinal-env-admin-panel-user-manager
+	url = https://github.com/spinalcom/spinal-env-admin-panel-user-manager
+[submodule "src/spinal-env-drive-panel-logs"]
+	path = src/spinal-env-drive-panel-logs
+	url = https://github.com/spinalcom/spinal-env-drive-panel-logs
+[submodule "src/spinal-env-drive-plugin-base"]
+	path = src/spinal-env-drive-plugin-base
+	url = https://github.com/spinalcom/spinal-env-drive-plugin-base
+[submodule "src/spinal-env-drive-plugin-version_manager"]
+	path = src/spinal-env-drive-plugin-version_manager
+	url = https://github.com/spinalcom/spinal-env-drive-plugin-version_manager
+[submodule "src/spinal-env-drive-plugin-visa"]
+	path = src/spinal-env-drive-plugin-visa
+	url = https://github.com/spinalcom/spinal-env-drive-plugin-visa
