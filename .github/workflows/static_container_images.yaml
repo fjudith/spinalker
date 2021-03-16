@@ -7,7 +7,7 @@ on:
       - "Env-Admin Container Images"
       - "Env-Drive Container Images"
       - "Env-Viewer Container Images"
-    branches: [master]
+    branches: [main, master]
     types: 
       - completed
   push:
