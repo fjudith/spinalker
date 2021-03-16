@@ -15,4 +15,4 @@ RUN apk add --update --no-cache git python build-base && \
 
 WORKDIR ${APP_PATH}/spinal-env-drive-plugin-visa
 
-RUN ["npm", "run", "build"]
+# RUN ["npm", "run", "build"]
