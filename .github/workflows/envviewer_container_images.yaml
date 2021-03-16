@@ -31,7 +31,6 @@ jobs:
           - spinal-env-viewer-plugin-generate-spatial-reference
           - spinal-env-viewer-plugin-graph_viewer
           - spinal-env-viewer-plugin-item_model_selector
-          - spinal-env-viewer-library
 
     steps:
       - uses: FranzDiebold/github-env-vars-action@v1.2.1
