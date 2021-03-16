@@ -3,15 +3,15 @@ name: Env-Drive Container Images
 on:
  push:
   paths:
-    - 'src/*env-drive*'
-    - 'test/*env-drive*'
-    - 'containers/*env-drive*'
+    - 'src/*env-drive*/**'
+    - 'test/*env-drive*/**'
+    - 'containers/*env-drive*/**'
     - '.github/workflows/envdrive_container_images.yaml'
   pull_request:
     paths:
-    - 'src/*env-drive*'
-    - 'test/*env-drive*'
-    - 'containers/*env-drive*'
+    - 'src/*env-drive*/**'
+    - 'test/*env-drive*/**'
+    - 'containers/*env-drive*/**'
     - '.github/workflows/envdrive_container_images.yaml'
 
 env:
