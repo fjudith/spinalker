@@ -1,9 +1,9 @@
 # Routes
 FROM docker.io/fjudith/spinal-browser-admin:2.0.5-alpine as admin
-FROM docker.io/fjudith/spinal-browser-spinaltwin:1.0.4-alpine as spinaltwin
+FROM docker.io/fjudith/spinal-browser-spinaltwin:1.1.0-alpine as spinaltwin
 FROM docker.io/fjudith/spinal-browser-appstore:1.0.1-alpine as appstore
 FROM docker.io/fjudith/spinal-browser-drive:2.0.8-alpine as drive
-FROM docker.io/fjudith/spinal-browser-graph-inspector:1.0.1-alpine as graph
+FROM docker.io/fjudith/spinal-browser-graph-inspector:1.0.2-alpine as graph
 FROM docker.io/fjudith/spinal-browser-user_role_manager:1.1.3-alpine as user_role_manager
 # Templates
 FROM docker.io/fjudith/spinal-env-admin-panel-hub-status:1.0.1-alpine as env_admin_panel_hub_status
