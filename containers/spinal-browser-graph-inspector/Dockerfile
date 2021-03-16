@@ -12,7 +12,7 @@ RUN apk add --update --no-cache git python build-base util-linux && \
     npm install && \
     cd ${APP_PATH}/Spinal-browser-graph-inspector && \
     npm install --save-dev babel-polyfill && \
-    npm install
+    npm install --save-dev
 
 WORKDIR ${APP_PATH}/Spinal-browser-graph-inspector
 
