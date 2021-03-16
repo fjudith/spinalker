@@ -1,6 +1,0 @@
-{
-    "apps": [{
-        "name": "spinal-http-server",
-        "script": "index.js"
-    }]
-}
