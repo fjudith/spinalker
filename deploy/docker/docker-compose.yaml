@@ -3,8 +3,6 @@ services:
  
   spinal-core-hub:
     image: docker.io/fjudith/spinal-core-hub:3.1.0-alpine
-    networks:
-      - spinalker
     expose:
       - 8888
       - 8889
@@ -14,39 +12,29 @@ services:
   
   spinal-organ-forge:
     image: docker.io/fjudith/spinal-organ-forge:1.1.5-alpine
-    networks:
-      - spinalker
     environment:
       SPINALHUB_HOST: spinal-core-hub
       SPINALHUB_PORT: 8888
 
   spinal-organ-network_sample:
     image: docker.io/fjudith/spinal-organ-network_sample:1.0.1-alpine
-    networks:
-      - spinalker
     environment:
       SPINALHUB_HOST: spinal-core-hub
       SPINALHUB_PORT: 8888
 
   spinal-organ-api-gateway:
     image: docker.io/fjudith/spinal-organ-api-gateway:1.0.0-alpine
-    networks:
-      - spinalker
     expose:
       - 4025
       - 4026
 
   spinal-organ-dump_manager:
     image: docker.io/fjudith/spinal-organ-dump_manager:1.0.0-alpine
-    networks:
-      - spinalker
     volumes:
       - ./memory:/usr/share/spinal-organ-dump_manager/memory
   
   spinal-http-server:
     image: docker.io/fjudith/spinal-http-server:1.0.0-alpine
-    networks:
-      - spinalker
     environment:
       HUB_HOST: spinal-core-hub
       SPINALHUB_HOST: spinal-core-hub
@@ -54,8 +42,6 @@ services:
   
   probe:
     image: weaveworks/scope:1.11.5
-    networks:
-      - spinalker
     privileged: true
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:rw"
@@ -64,9 +50,3 @@ services:
       - "true"
     ports:
       - 4040:4040
-
-## Network
-network:
-  spinalker:
-    driver: 'bridge'
-  
