@@ -4,14 +4,17 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
+# npm install --silent --save-dev -g  vue @vue/cli @nuxtjs/vuetify && \
+
 RUN apk add --update --no-cache git && \
+    npm install git+https://github.com/spinalcom/spinal-browser-viewer-offline && \
     git clone https://github.com/spinalcom/spinal-browser-viewer && \
     git clone https://github.com/spinalcom/spinal-core-system && \
     ln -s $(pwd)/spinal-core-system/spinal-register.js /usr/local/bin/spinal-register && \
     cd ${APP_PATH}/spinal-core-system && \
-    yarn install && \
+    npm install && \
     cd ${APP_PATH}/spinal-browser-viewer && \
-    yarn install
+    npm install
 
 WORKDIR ${APP_PATH}/spinal-browser-viewer
 
