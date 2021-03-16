@@ -42,6 +42,9 @@ COPY --from=env_drive_plugin_base ${APP_PATH}/spinal-env-drive-plugin-base/templ
 COPY --from=env_drive_plugin_digital_twin ${APP_PATH}/spinal-env-drive-plugin-digital_twin/templates ./html/templates/
 COPY --from=env_drive_plugin_version_manager ${APP_PATH}/spinal-env-drive-plugin-version_manager/templates ./html/templates/
 COPY --from=env_drive_plugin_visa ${APP_PATH}/spinal-env-drive-plugin-visa/templates ./html/templates/
+# Libs
+COPY --from=admin ${APP_PATH}/spinal-browser-admin/.browser_organs/lib/ ./html/lib/
+COPY --from=drive ${APP_PATH}/spinal-browser-drive/.browser_organs/lib/ ./html/lib/
 
 RUN ["npm", "install"]
 
