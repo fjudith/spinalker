@@ -5,6 +5,7 @@ ENV APP_PATH="/usr/share"
 WORKDIR ${APP_PATH}
 
 RUN apk add --update --no-cache git python build-base util-linux && \
+    npm install babel-polyfill -g && \
     git clone https://github.com/spinalcom/spinal-browser-drive && \
     chmod +x $(pwd)/spinal-browser-drive/create_drive_env.js && \
     ln -s $(pwd)/spinal-browser-drive/create_drive_env.js /usr/local/bin/create_drive_env && \

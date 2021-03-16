@@ -5,6 +5,7 @@ ENV APP_PATH="/usr/share"
 WORKDIR ${APP_PATH}
 
 RUN apk add --update --no-cache git python build-base util-linux && \
+    npm install babel-polyfill -g && \
     npm install git+https://github.com/spinalcom/spinal-browser-viewer-offline && \
     git clone https://github.com/spinalcom/spinal-browser-viewer && \
     git clone https://github.com/spinalcom/spinal-core-system && \
