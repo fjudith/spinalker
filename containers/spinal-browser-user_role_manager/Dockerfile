@@ -1,4 +1,4 @@
-FROM node:11-alpine as builder
+FROM node:12-alpine as builder
 
 ENV APP_PATH="/usr/share"
 
@@ -11,7 +11,7 @@ RUN apk add --update --no-cache git python build-base util-linux && \
     cd ${APP_PATH}/spinal-core-system && \
     npm install && \
     cd ${APP_PATH}/spinal-browser-user_role_manager && \
-    npm install
+    npm install --save-dev
     
 
 WORKDIR ${APP_PATH}/spinal-browser-user_role_manager
