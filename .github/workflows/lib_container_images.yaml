@@ -1,18 +1,18 @@
-name: Env-Viewer Container Images
+name: Lib Container Images
 
 on:
  push:
   paths:
-    - 'src/*env-viewer*/**'
-    - 'test/*env-viewer*/**'
-    - 'containers/*env-viewer*/**'
-    - '.github/workflows/envviewer_container_images.yaml'
+    - 'src/*lib*/**'
+    - 'test/*lib*/**'
+    - 'containers/*lib*/**'
+    - '.github/workflows/lib_container_images.yaml'
   pull_request:
     paths:
-    - 'src/*env-viewer*/**'
-    - 'test/*env-viewer*/**'
-    - 'containers/*env-viewer*/**'
-    - '.github/workflows/envviewer_container_images.yaml'
+    - 'src/*lib*/**'
+    - 'test/*lib*/**'
+    - 'containers/*lib*/**'
+    - '.github/workflows/lib_container_images.yaml'
 
 env:
   DOCKER_REPO: "fjudith"
@@ -25,13 +25,8 @@ jobs:
     strategy:
       matrix:
         image:
-          - spinal-env-viewer-context-geographic-service
-          - spinal-env-viewer-plugin-documentation-service
-          - spinal-env-viewer-plugin-forge
-          - spinal-env-viewer-plugin-generate-spatial-reference
-          - spinal-env-viewer-plugin-graph_viewer
-          - spinal-env-viewer-plugin-item_model_selector
-          - spinal-env-viewer-library
+          - spinal-lib-admin-env
+          - spinal-lib-drive-env
 
     steps:
       - uses: FranzDiebold/github-env-vars-action@v1.2.1
