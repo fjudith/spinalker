@@ -13,6 +13,9 @@ FROM docker.io/fjudith/spinal-env-drive-plugin-base:2.0.0-alpine as env_drive_pl
 FROM docker.io/fjudith/spinal-env-drive-plugin-digital_twin:1.0.2-alpine as env_drive_plugin_digital_twin
 FROM docker.io/fjudith/spinal-env-drive-plugin-version_manager:1.0.7-alpine as env_drive_plugin_version_manager
 FROM docker.io/fjudith/spinal-env-drive-plugin-visa:1.0.3-alpine as env_drive_plugin_visa
+# Lib
+FROM docker.io/spinal-browser-viewer:2.0.6-alpine as browser_viewer
+
 
 FROM node:12-alpine as builder
 
@@ -45,6 +48,7 @@ COPY --from=env_drive_plugin_visa ${APP_PATH}/spinal-env-drive-plugin-visa/templ
 # Libs
 COPY --from=admin ${APP_PATH}/spinal-browser-admin/.browser_organs/lib/ ./html/lib/
 COPY --from=drive ${APP_PATH}/spinal-browser-drive/.browser_organs/lib/ ./html/lib/
+COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/.browser_organs/lib/ ./html/lib/
 
 RUN ["npm", "install"]
 

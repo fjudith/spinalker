@@ -31,6 +31,7 @@ jobs:
           - spinal-browser-graph-inspector
           - spinal-browser-spinaltwin
           - spinal-browser-user_role_manager
+          - spinal-browser-viewer
     steps:
       - uses: FranzDiebold/github-env-vars-action@v1.2.1
 
