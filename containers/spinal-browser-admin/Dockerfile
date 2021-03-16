@@ -13,6 +13,7 @@ RUN apk add --update --no-cache git python build-base util-linux && \
     npm install && \
     cd ${APP_PATH}/spinal-browser-admin && \
     npm install babel-polyfill && \
+    npm install @types/node && \
     npm install
 
 WORKDIR ${APP_PATH}/spinal-browser-admin

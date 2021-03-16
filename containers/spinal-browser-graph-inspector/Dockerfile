@@ -11,6 +11,7 @@ RUN apk add --update --no-cache git python build-base util-linux && \
     cd ${APP_PATH}/spinal-core-system && \
     npm install && \
     cd ${APP_PATH}/Spinal-browser-graph-inspector && \
+    npm install @types/node && \
     npm install
 
 WORKDIR ${APP_PATH}/Spinal-browser-graph-inspector
