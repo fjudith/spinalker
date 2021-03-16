@@ -4,14 +4,14 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-RUN apk add --update --no-cache git && \
+RUN apk add --update --no-cache git util-linux && \
     git clone https://github.com/fjudith/spinal-browser-user_role_manager && \
     git clone https://github.com/spinalcom/spinal-core-system && \
     ln -s $(pwd)/spinal-core-system/spinal-register.js /usr/local/bin/spinal-register && \
     cd ${APP_PATH}/spinal-core-system && \
-    yarn install && \
+    npm install && \
     cd ${APP_PATH}/spinal-browser-user_role_manager && \
-    yarn install
+    npm install
 
 WORKDIR ${APP_PATH}/spinal-browser-user_role_manager
 
