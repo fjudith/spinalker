@@ -4,7 +4,7 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-RUN apk add --update --no-cache git util-linux util-linux && \
+RUN apk add --update --no-cache git python build-base util-linux && \
     git clone https://github.com/spinalcom/spinal-browser-spinaltwin && \
     cd ${APP_PATH}/spinal-browser-spinaltwin && \
     npm install
