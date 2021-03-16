@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     strategy:
+      fail-fast: false
       matrix:
         image:
           - spinal-browser-admin
@@ -31,7 +32,7 @@ jobs:
           - spinal-browser-graph-inspector
           - spinal-browser-spinaltwin
           - spinal-browser-user_role_manager
-          # - spinal-browser-viewer
+          - spinal-browser-viewer
     steps:
       - uses: FranzDiebold/github-env-vars-action@v1.2.1
 
