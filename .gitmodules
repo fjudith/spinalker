@@ -76,3 +76,12 @@
 [submodule "src/spinal-env-drive-plugin-visa"]
 	path = src/spinal-env-drive-plugin-visa
 	url = https://github.com/spinalcom/spinal-env-drive-plugin-visa
+[submodule "src/spinal-lib-admin-env"]
+	path = src/spinal-lib-admin-env
+	url = https://github.com/spinalcom/spinal-lib-admin-env
+[submodule "src/spinal-lib-drive-env"]
+	path = src/spinal-lib-drive-env
+	url = https://github.com/spinalcom/spinal-lib-drive-env
+[submodule "src/spinal-env-viewer-library"]
+	path = src/spinal-env-viewer-library
+	url = https://github.com/spinalcom/spinal-env-viewer-library
