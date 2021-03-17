@@ -3,7 +3,7 @@ const path = require('path');
 const absPath = './html/'.split('/');
 const root = path.join(__dirname, ...absPath);
 const portHub = process.env.SPINALHUB_PORT || 7080;
-const HUB_HOST = `http://localhost:${portHub}`; // modif here
+const HUB_HOST = `http://${process.env.SPINALHUB_HOST}:${portHub}` || `http://localhost:${portHub}`; // modif here
 const port = parseInt(portHub, 10) + 4;
 
 var proxy = require('express-http-proxy');
