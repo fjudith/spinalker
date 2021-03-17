@@ -61,7 +61,7 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-COPY --from=builder ${APP_PATH}/spinal-http-server ${APP_PATH}/spinal-http-server/
+COPY --from=builder ${APP_PATH}/spinal-http-server/html ${APP_PATH}/spinal-http-server/html/
 
 WORKDIR ${APP_PATH}/spinal-http-server
 
