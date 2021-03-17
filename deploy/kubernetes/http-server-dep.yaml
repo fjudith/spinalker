@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: spinal-http-server
-        image: docker.io/fjudith/spinal-http-server:1.0.0-alpine
+        image: docker.io/fjudith/spinal-caddy-server:1.0.0-alpine
         imagePullPolicy: Always
         env:
         - name: HUB_HOST
