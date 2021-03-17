@@ -68,7 +68,7 @@ WORKDIR ${APP_PATH}/spinal-http-server
 RUN ls -lha
 
 # Copy Web server configuraiton file
-COPY files/Caddyfile /etc/caddy/Caddyfile
+COPY templates/Caddyfile.tpl /etc/caddy/Caddyfile
 
 COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
 COPY ./scripts/entrypoint.sh ./entrypoint.sh

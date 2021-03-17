@@ -32,40 +32,40 @@ log {
 
 # Spinal Core Hub redirections
 rewrite /sceen /sceen/
-reverse_proxy /sceen/* localhost:8888
+reverse_proxy /sceen/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_user_id /get_user_id/
-reverse_proxy /get_user_id/* localhost:8888
+reverse_proxy /get_user_id/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_admin_id /get_admin_id/
-reverse_proxy /get_admin_id/* localhost:8888
+reverse_proxy /get_admin_id/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_new_account /get_new_account/
-reverse_proxy /get_new_account/* localhost:8888
+reverse_proxy /get_new_account/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_confirm_new_account /get_confirm_new_account/
-reverse_proxy /get_confirm_new_account/* localhost:8888
+reverse_proxy /get_confirm_new_account/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_resend_confirmation /get_resend_confirmation/
-reverse_proxy /get_resend_confirmation/* localhost:8888
+reverse_proxy /get_resend_confirmation/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_new_password /get_new_password/
-reverse_proxy /get_new_password/* localhost:8888
+reverse_proxy /get_new_password/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_change_user_password /get_change_user_password/
-reverse_proxy /get_change_user_password/* localhost:8888
+reverse_proxy /get_change_user_password/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_delete_account /get_delete_account/
-reverse_proxy /get_delete_account/* localhost:8888
+reverse_proxy /get_delete_account/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_change_user_password_by_admin /get_change_user_password_by_admin/
-reverse_proxy /get_change_user_password_by_admin/* localhost:8888
+reverse_proxy /get_change_user_password_by_admin/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_delete_account_by_admin /get_delete_account_by_admin/
-reverse_proxy /get_delete_account_by_admin/* localhost:8888
+reverse_proxy /get_delete_account_by_admin/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 rewrite /get_change_account_rights_by_admin /get_change_account_rights_by_admin/
-reverse_proxy /get_change_account_rights_by_admin/* localhost:8888
+reverse_proxy /get_change_account_rights_by_admin/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 # Refer to the Caddy docs for more information:
 # https://caddyserver.com/docs/caddyfile

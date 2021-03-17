@@ -1,5 +1,5 @@
 #!/bin/sh
-set -ex
+set -e
 
 # Setting default environnement variables values
 # -----------------------------------------------
@@ -12,7 +12,16 @@ SPINAL_PASSWORD_USER=${SPINAL_PASSWORD_USER:-"jk57gZ3RE"}
 
 # Build configuration file, only if not mounted
 # -----------------------------------------------
-if ! ls ${APP_PATH}/spinal-http-server/.config.json; then
+set +e
+sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" /etc/caddy/Caddyfile
+sed -i "s/__SPINALHUB_HOST__/${SPINALHUB_HOST}/g" /etc/caddy/Caddyfile
+sed -i "s/__SPINAL_USER_ID__/${SPINAL_USER_ID}/g" /etc/caddy/Caddyfile
+sed -i "s/__SPINAL_PASSWORD__/${SPINAL_PASSWORD}/g" /etc/caddy/Caddyfile
+sed -i "s/__SPINAL_PASSWORD_ROOT__/${SPINAL_PASSWORD_ROOT}/g" /etc/caddy/Caddyfile
+sed -i "s/__SPINAL_PASSWORD_USER__/${SPINAL_PASSWORD_USER}/g" /etc/caddy/Caddyfile
+set -e
+
+if ! [ -f ${APP_PATH}/spinal-http-server/.config.json ]; then
     cp /tmp/.config.json.tpl ${APP_PATH}/spinal-http-server/.config.json && \
     sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-http-server/.config.json
     sed -i "s/__SPINALHUB_HOST__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-http-server/.config.json
@@ -21,5 +30,4 @@ if ! ls ${APP_PATH}/spinal-http-server/.config.json; then
     sed -i "s/__SPINAL_PASSWORD_ROOT__/${SPINAL_PASSWORD_ROOT}/g" ${APP_PATH}/spinal-http-server/.config.json
     sed -i "s/__SPINAL_PASSWORD_USER__/${SPINAL_PASSWORD_USER}/g" ${APP_PATH}/spinal-http-server/.config.json
 fi
-
 exec "$@"
