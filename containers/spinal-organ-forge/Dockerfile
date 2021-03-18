@@ -15,7 +15,8 @@ RUN apk add --update --no-cache git && \
 
 WORKDIR ${APP_PATH}/spinal-organ-forge
 
-RUN ["npm", "run", "create-ln"]
+# RUN ["npm", "run", "create-ln"]
+RUN ["mkdir", "-p", "viewerForgeFiles"]
 
 # -----------------------------------------------
 # Production
