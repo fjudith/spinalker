@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ex
 
 # Setting default environnement variables values
 # -----------------------------------------------
@@ -36,5 +36,7 @@ if ! ls ${APP_PATH}/spinal-organ-network_sample/.config.json; then
     sed -i "s/__SPINAL_PASSWORD_ROOT__/${SPINAL_PASSWORD_ROOT}/g" ${APP_PATH}/spinal-organ-network_sample/.config.json
     sed -i "s/__SPINAL_PASSWORD_USER__/${SPINAL_PASSWORD_USER}/g" ${APP_PATH}/spinal-organ-network_sample/.config.json
 fi
+
+cat ${APP_PATH}/spinal-organ-network_sample/config.json5
 
 exec "$@"
