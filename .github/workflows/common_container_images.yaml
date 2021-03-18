@@ -55,12 +55,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       
-      - name: Login to testruction.io
-        uses: docker/login-action@v1 
-        with:
-          registry: harbor.testruction.io
-          username: ${{ secrets.HARBOR_USERNAME }}
-          password: ${{ secrets.HARBOR_PASSWORD }} 
+      # - name: Login to Harbor
+      #   uses: docker/login-action@v1 
+      #   with:
+      #     registry: harbor.testruction.io
+      #     username: ${{ secrets.HARBOR_USERNAME }}
+      #     password: ${{ secrets.HARBOR_PASSWORD }} 
 
       - name: Build OCI compliant image
         id: container_image_build
@@ -92,12 +92,12 @@ jobs:
           file: ./containers/${{ matrix.image }}/Dockerfile
           platforms: linux/amd64
 
-      - name: Push image to Quay registry
-        id: quay
-        uses: docker/build-push-action@v2
-        with:
-          context: ./containers/${{ matrix.image }}
-          push: true
-          tags: harbor.testruction.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_TAG }},harbor.testruction.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:latest
-          file: ./containers/${{ matrix.image }}/Dockerfile
-          platforms: linux/amd64
+      # - name: Push image to Harbor registry
+      #   id: harbor
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     context: ./containers/${{ matrix.image }}
+      #     push: true
+      #     tags: harbor.testruction.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:${{ env.SEMVER_TAG }},harbor.testruction.io/${{ env.DOCKER_REPO }}/${{ matrix.image }}:latest
+      #     file: ./containers/${{ matrix.image }}/Dockerfile
+      #     platforms: linux/amd64
