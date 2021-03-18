@@ -3,20 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: organ-network-sample
+    app: spinal-core
+    component:  organ-network-sample
   name: organ-network-sample
   namespace: spinalcom
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: organ-network-sample
+      app: spinal-core
+      component:  organ-network-sample
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: organ-network-sample
+        app: spinal-core
+        component:  organ-network-sample
     spec:
       containers:
       - name: spinal-organ-network-sample

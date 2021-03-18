@@ -3,9 +3,13 @@ kind: Service
 metadata:
   name: organ-api-gateway
   namespace: spinalcom
+  labels:
+    app: spinal-core
+    component: organ-api-gateway
 spec:
   selector:
-    app: organ-api-gateway
+    app: spinal-core
+    component: organ-api-gateway
   ports:
     - name: http
       protocol: TCP

@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: core-hub-data
+  namespace: spinalcom
+  labels:
+    app: spinal-core
+    component: core-hub
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: "rook-cephfs" # Empty string must be explicitly set otherwise default StorageClass will be set
+  # selector:
+  #   matchLabels:
+  #     app: spinalcore
+  #     type: "data"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: core-hub-viewer
+  namespace: spinalcom
+  labels:
+    app: spinal-core
+    component: core-hub
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: "rook-cephfs" # Empty string must be explicitly set otherwise default StorageClass will be set
+  # selector:
+  #   matchLabels:
+  #     app: spinalcore
+  #     type: "viewer"

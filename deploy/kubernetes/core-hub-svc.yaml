@@ -3,6 +3,9 @@ kind: Service
 metadata:
   name: core-hub
   namespace: spinalcom
+  labels:
+    app: spinal-core
+    component: core-hub
 spec:
   selector:
     app: core-hub

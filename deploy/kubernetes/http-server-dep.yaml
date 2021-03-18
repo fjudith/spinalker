@@ -3,20 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: http-server
+    app: spinal-core
+    component: http-server
   name: http-server
   namespace: spinalcom
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: http-server
+      app: spinal-core
+      component: http-server
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: http-server
+        app: spinal-core
+        component: http-server
     spec:
       containers:
       - name: spinal-http-server

@@ -3,20 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: organ-forge
+    app: spinal-core
+    component:  organ-forge
   name: organ-forge
   namespace: spinalcom
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: organ-forge
+      app: spinal-core
+      component:  organ-forge
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: organ-forge
+        app: spinal-core
+        component:  organ-forge
     spec:
       containers:
       - name: spinal-organ-forge
@@ -28,4 +31,11 @@ spec:
         - name: SPINALHUB_PORT
           value: "8888"
         resources: {}
+        volumeMounts:
+        - mountPath: /usr/share/spinal-organ-forge/viewerForgeFiles
+          name: viewer
+      volumes:
+      - name: viewer
+        persistentVolumeClaim:
+          claimName: core-hub-viewer
 status: {}

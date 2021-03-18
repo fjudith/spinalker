@@ -3,9 +3,13 @@ kind: Service
 metadata:
   name: http-server
   namespace: spinalcom
+  labels:
+    app: spinal-core
+    component: http-server
 spec:
   selector:
-    app: http-server
+    app: spinal-core
+    component: http-server
   ports:
     - name: http
       protocol: TCP

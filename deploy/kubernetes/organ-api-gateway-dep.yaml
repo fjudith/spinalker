@@ -3,20 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: organ-api-gateway
+    app: spinal-core
+    component: organ-api-gateway
   name: organ-api-gateway
   namespace: spinalcom
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: organ-api-gateway
+      app: spinal-core
+      component: organ-api-gateway
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: organ-api-gateway
+        app: spinal-core
+        component: organ-api-gateway
     spec:
       containers:
       - name: spinal-organ-api-gateway
