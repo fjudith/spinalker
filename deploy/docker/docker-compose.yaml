@@ -9,12 +9,16 @@ services:
       - 8890
     volumes:
       - ./memory:/usr/share/app/memory
+      - ./memory/viewerForgeFiles:/usr/share/app/memory/viewerForgeFiles
   
   spinal-organ-forge:
     image: docker.io/fjudith/spinal-organ-forge:1.1.5-alpine
     environment:
       SPINALHUB_HOST: spinal-core-hub
       SPINALHUB_PORT: 8888
+    volumes:
+      - ./memory/viewerForgeFiles:/usr/share/spinal-organ-dump_manager/viewerForgeFiles
+  
 
   spinal-organ-network_sample:
     image: docker.io/fjudith/spinal-organ-network_sample:1.0.1-alpine
