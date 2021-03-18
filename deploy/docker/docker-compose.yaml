@@ -34,14 +34,14 @@ services:
       - ./memory:/usr/share/spinal-organ-dump_manager/memory
   
   spinal-http-server:
-    image: docker.io/fjudith/spinal-http-server:1.0.0-alpine
+    image: docker.io/fjudith/spinal-caddy-server:1.0.0-alpine
     environment:
       HUB_HOST: spinal-core-hub
       SPINALHUB_HOST: spinal-core-hub
       SPINALHUB_PORT: 8888
   
   probe:
-    image: weaveworks/scope:1.11.5
+    image: weaveworks/scope:1.13.1
     privileged: true
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:rw"

@@ -56,6 +56,6 @@ elif ! [ "${HUB_LAUNCH_COMMAND}" == "" ]; then
   CMD_ARGS="${CMD_ARGS} --launch-command ${HUB_LAUNCH_COMMAND}"
 fi
 
-echo "Commant line arguments: '${CMD_ARGS}'"
+# echo "Commant line arguments: '${CMD_ARGS}'"
 
-exec "$@"
+exec "$@ ${CMD_ARGS}"
