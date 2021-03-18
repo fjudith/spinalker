@@ -26,7 +26,7 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-COPY --from=builder ${APP_PATH}/spinal-organ-forge/ ${APP_PATH}/spinal-organ-forge/
+COPY --from=builder ${APP_PATH}/spinal-organ-forge ${APP_PATH}/spinal-organ-forge/
 
 WORKDIR ${APP_PATH}/spinal-organ-forge
 
