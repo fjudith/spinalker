@@ -43,6 +43,16 @@ spec:
         volumeMounts:
         - mountPath: /usr/share/spinal-organ-dump_manager/memory
           name: cache-volume
+      - name: spinal-organ-forge
+        image: docker.io/fjudith/spinal-organ-forge:1.1.5-alpine
+        imagePullPolicy: Always
+        env:
+        - name: SPINALHUB_PORT
+          value: "8888"
+        resources: {}
+        volumeMounts:
+        - mountPath: /usr/share/spinal-organ-forge/memory
+          name: cache-volume
       volumes:
       - name: cache-volume
         emptyDir: {}
