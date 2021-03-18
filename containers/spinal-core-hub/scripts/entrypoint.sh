@@ -24,7 +24,7 @@ HUB_MODIFY_PASSWORDS=${HUB_MODIFY_PASSWORDS:-"false"}
 # Compose command line arguements
 # -----------------------------------------------
 CMD_ARGS=""
-CMD_ARGS="${CMD_ARGS}--base-dir $HUB_BASE_DIR"
+CMD_ARGS="${CMD_ARGS} --base-dir $HUB_BASE_DIR"
 CMD_ARGS="${CMD_ARGS} --admin-dir $HUB_ADMIN_DIR"
 CMD_ARGS="${CMD_ARGS} --db-file $HUB_DB_FILE"
 CMD_ARGS="${CMD_ARGS} --db-dir $HUB_DB_DIR"
@@ -58,4 +58,4 @@ fi
 
 # echo "Commant line arguments: '${CMD_ARGS}'"
 
-exec "$@ ${CMD_ARGS}"
+exec $@ ${CMD_ARGS}
