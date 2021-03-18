@@ -3,6 +3,7 @@ set -e
 
 # Setting default environnement variables values
 # -----------------------------------------------
+LISTEN_PORT=${LISTEN_PORT:-"8892"}
 SPINALHUB_PORT=${SPINALHUB_PORT:-"8888"}
 SPINALHUB_HOST=${SPINALHUB_HOST:-"localhost"}
 SPINAL_USER_ID=${SPINAL_USER_ID:-"168"}
@@ -13,6 +14,7 @@ SPINAL_PASSWORD_USER=${SPINAL_PASSWORD_USER:-"jk57gZ3RE"}
 # Build configuration file, only if not mounted
 # -----------------------------------------------
 set +e
+sed -i "s/__LISTEN_PORT__/${LISTEN_PORT}/g" /etc/caddy/Caddyfile
 sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" /etc/caddy/Caddyfile
 sed -i "s/__SPINALHUB_HOST__/${SPINALHUB_HOST}/g" /etc/caddy/Caddyfile
 sed -i "s/__SPINAL_USER_ID__/${SPINAL_USER_ID}/g" /etc/caddy/Caddyfile

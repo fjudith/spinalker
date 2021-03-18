@@ -7,15 +7,15 @@
 # sure your domain's A/AAAA DNS records are properly pointed to
 # this machine's public IP, then replace the line below with your
 # domain name.
-:8892
+:__LISTEN_PORT__
 
 # Set this path to your site's directory.
 # root * /usr/share/caddy
-root * /usr/share/spinal-http-server
+root * /usr/share/spinal-http-server/
 
 # Enable the static file server.
 # https://caddyserver.com/docs/caddyfile/directives/file_server
-file_server /html/* browse
+file_server browse
 
 # Another common task is to set up a reverse proxy:
 # reverse_proxy localhost:8080
