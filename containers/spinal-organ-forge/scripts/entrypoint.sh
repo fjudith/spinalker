@@ -17,7 +17,7 @@ SPINAL_CLIENT_SECRET=${SPINAL_CLIENT_SECRET:-"35GBJWY4wvdUUZQQ"}
 
 # Build configuration file, only if not mounted
 # -----------------------------------------------
-if ! ls ${APP_PATH}/spinal-organ-forge/.config.json; then
+if ! [ -f ${APP_PATH}/spinal-organ-forge/.config.json ]; then
     cp /tmp/.config.json.tpl ${APP_PATH}/spinal-organ-forge/.config.json && \
     sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-organ-forge/.config.json
     sed -i "s/__SPINALHUB_HOST__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-organ-forge/.config.json

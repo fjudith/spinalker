@@ -34,7 +34,8 @@ COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
 COPY ./files/.apps.json ./.apps.json
 COPY ./scripts/entrypoint.sh ./entrypoint.sh
 
-RUN chmod +x ./entrypoint.sh
+RUN rm -f ${APP_PATH}/spinal-organ-forge/.config.json && \
+    chmod +x ./entrypoint.sh
 
 ENTRYPOINT [ "./entrypoint.sh" ]
 
