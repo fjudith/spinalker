@@ -21,16 +21,22 @@ spec:
         app: spinal-core
         component: organ-dump-manager
     spec:
+      initContainers:
+      - name: init-service
+        image: alpine:3
+        command: ['sh', '-c', "until nc -vz core-hub 8888; do sleep 2; done"]
       containers:
       - name: spinal-organ-dump-manager
         image: docker.io/fjudith/spinal-organ-dump_manager:1.0.0-alpine
         imagePullPolicy: Always
         env:
+        - name: SPINALHUB_HOST
+          value: "core-hub"
         - name: SPINALHUB_PORT
           value: "8888"
         resources: {}
         volumeMounts:
-        - mountPath: /usr/share/spinal-organ-dump_manager/memory
+        - mountPath: /usr/nerve-center/memory
           name: memory
       volumes:
       - name: memory
