@@ -8,7 +8,8 @@ metadata:
     component: core-hub
 spec:
   selector:
-    app: core-hub
+    app: spinal-core
+    component: core-hub
   ports:
     - name: hub-port
       protocol: TCP
