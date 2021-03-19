@@ -7,7 +7,6 @@ This project aims to contenairize the Spinalcom Building operating system to imp
 * [CIS Kubernetes Security Benchmark](https://www.cisecurity.org/benchmark/kubernetes/)
 * [Dockerfile Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 * [Building a trusted software supply chain](https://cd.foundation/blog/2020/07/07/devsecops-building-a-trusted-software-supply-chain/)
-* 
 
 ## Remove submodule
 
