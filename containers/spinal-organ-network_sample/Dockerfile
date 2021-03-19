@@ -35,7 +35,7 @@ COPY ./scripts/launch.config.js ./launch.config.js
 COPY ./files/.apps.json ./.apps.json
 COPY ./scripts/entrypoint.sh ./entrypoint.sh
 
-RUN rm -f ${APP_PATH}/spinal-organ-network_sample/config.json5.tpl && \
+RUN rm -f ${APP_PATH}/spinal-organ-network_sample/config.json5 && \
     chmod +x ./entrypoint.sh
 
 ENTRYPOINT [ "./entrypoint.sh" ]

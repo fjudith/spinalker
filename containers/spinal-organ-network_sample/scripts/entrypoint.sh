@@ -15,7 +15,7 @@ SPINAL_DTWIN_PATH=${SPINAL_DTWIN_PATH:-"/__users__/admin/deiv4"}
 
 # Build configuration file, only if not mounted
 # -----------------------------------------------
-if ! ls ${APP_PATH}/spinal-organ-network_sample/config.json5; then
+if ! [ -f ${APP_PATH}/spinal-organ-network_sample/config.json5 ]; then
     cp /tmp/config.json5.tpl ${APP_PATH}/spinal-organ-network_sample/config.json5 && \
     sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-organ-network_sample/config.json5
     sed -i "s/__SPINALHUB_HOST__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-organ-network_sample/config.json5
@@ -27,7 +27,7 @@ if ! ls ${APP_PATH}/spinal-organ-network_sample/config.json5; then
     cat ${APP_PATH}/config.json5
 fi
 
-if ! ls ${APP_PATH}/spinal-organ-network_sample/.config.json; then
+if ! [ -f ${APP_PATH}/spinal-organ-network_sample/.config.json ]; then
     cp /tmp/.config.json.tpl ${APP_PATH}/spinal-organ-network_sample/.config.json && \
     sed -i "s/__SPINALHUB_PORT__/${SPINALHUB_PORT}/g" ${APP_PATH}/spinal-organ-network_sample/.config.json
     sed -i "s/__SPINALHUB_HOST__/${SPINALHUB_HOST}/g" ${APP_PATH}/spinal-organ-network_sample/.config.json
