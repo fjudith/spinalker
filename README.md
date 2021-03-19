@@ -1,5 +1,13 @@
 # spinalker
 
+This project aims to contenairize the Spinalcom Building operating system to improve the appliation portability and security.
+
+* [Overview of Cloud Native Security](https://kubernetes.io/docs/concepts/security/overview/)
+* [Pod security policy standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
+* [CIS Kubernetes Security Benchmark](https://www.cisecurity.org/benchmark/kubernetes/)
+* [Dockerfile Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+* [Building a trusted software supply chain](https://cd.foundation/blog/2020/07/07/devsecops-building-a-trusted-software-supply-chain/)
+* 
 
 ## Remove submodule
 
