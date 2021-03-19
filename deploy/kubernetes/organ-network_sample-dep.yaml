@@ -21,6 +21,10 @@ spec:
         app: spinal-core
         component:  organ-network-sample
     spec:
+      initContainers:
+      - name: init-service
+        image: alpine:3
+        command: ['sh', '-c', "until nc -vz core-hub 8888; do sleep 2; done"]
       containers:
       - name: spinal-organ-network-sample
         image: docker.io/fjudith/spinal-organ-network_sample:1.0.1-alpine
