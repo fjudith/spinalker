@@ -34,6 +34,16 @@ spec:
           value: core-hub
         - name: SPINALHUB_PORT
           value: "8888"
+        - name: SPINALHUB_IP
+          value: core-hub
+        - name: INTERVAL
+          value: "2000"
+        - name: CLIENT_ID
+          value: tIsoMvTJrMYQXcavxgv7k27q2aMm1jgZ
+        - name: SPINAL_USER_ID
+          value: "168"
+        - name: SPINAL_PASSWORD
+          value: JHGgcz45JKilmzknzelf65ddDadggftIO98P
         resources: {}
         volumeMounts:
         - mountPath: /usr/share/spinal-organ-forge/viewerForgeFiles

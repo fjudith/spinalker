@@ -12,16 +12,6 @@ RUN apk add --update --no-cache git && \
     npm install @types/node && \
     npm install
 
-# RUN apt-get update -yq && apt-get install -yq \
-#     git node-typescript && \
-#     apt-get autoremove -yqq --purge && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/* && \
-#     git clone https://github.com/spinalcom/spinal-env-viewer-plugin-documentation-service && \
-#     cd ${APP_PATH}/spinal-env-viewer-plugin-documentation-service && \
-#     npm install @types/node && \
-#     npm install
-
 WORKDIR ${APP_PATH}/spinal-env-viewer-plugin-documentation-service
 
 RUN ["npm", "run", "build"]

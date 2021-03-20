@@ -7,7 +7,7 @@ FROM docker.io/fjudith/spinal-browser-graph-inspector:1.0.2-alpine as graph
 FROM docker.io/fjudith/spinal-browser-user_role_manager:1.1.3-alpine as user_role_manager
 # Templates
 FROM docker.io/fjudith/spinal-env-admin-panel-hub-status:1.0.1-alpine as env_admin_panel_hub_status
-FROM docker.io/fjudith/spinal-env-admin-panel-user-manager:1.0.2-alpine as env_admin_panel_user_manager
+FROM docker.io/fjudith/spinal-env-admin-panel-user-manager:2.0.0-alpine as env_admin_panel_user_manager
 FROM docker.io/fjudith/spinal-env-drive-panel-logs:1.0.0-alpine as env_drive_panel_logs
 FROM docker.io/fjudith/spinal-env-drive-plugin-base:2.0.0-alpine as env_drive_plugin_base
 FROM docker.io/fjudith/spinal-env-drive-plugin-digital_twin:1.0.2-alpine as env_drive_plugin_digital_twin
