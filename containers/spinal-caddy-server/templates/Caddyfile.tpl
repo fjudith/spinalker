@@ -31,7 +31,10 @@ log {
 }
 
 # Spinal Core Hub redirections
-reverse_proxy /sceen __SPINALHUB_HOST__:__SPINALHUB_PORT__
+# reverse_proxy /sceen __SPINALHUB_HOST__:__SPINALHUB_PORT__
+# rewrite /sceen /sceen/
+rewrite /sceen  {path}
+reverse_proxy /sceen/* __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
 reverse_proxy /get_user_id __SPINALHUB_HOST__:__SPINALHUB_PORT__
 
