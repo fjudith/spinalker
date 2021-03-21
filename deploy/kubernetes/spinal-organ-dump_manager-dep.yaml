@@ -29,11 +29,6 @@ spec:
       - name: spinal-organ-dump-manager
         image: docker.io/fjudith/spinal-organ-dump_manager:1.0.0-alpine
         imagePullPolicy: Always
-        env:
-        - name: SPINALHUB_HOST
-          value: "core-hub"
-        - name: SPINALHUB_PORT
-          value: "8888"
         resources: {}
         volumeMounts:
         - mountPath: /usr/nerve-center/memory

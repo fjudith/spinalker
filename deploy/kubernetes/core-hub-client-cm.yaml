@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spinal-core-hub-client
+  namespace: spinalcom
+data:
+  SPINALHUB_HOST: core-hub
+  SPINALHUB_PORT: "8888"
+  SPINALHUB_IP: core-hub

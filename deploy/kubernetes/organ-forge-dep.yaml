@@ -29,13 +29,10 @@ spec:
       - name: spinal-organ-forge
         image: docker.io/fjudith/spinal-organ-forge:1.1.5-alpine
         imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: spinal-core-hub-client
         env:
-        - name: SPINALHUB_HOST
-          value: core-hub
-        - name: SPINALHUB_PORT
-          value: "8888"
-        - name: SPINALHUB_IP
-          value: core-hub
         - name: INTERVAL
           value: "2000"
         - name: CLIENT_ID

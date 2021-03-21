@@ -29,10 +29,8 @@ spec:
       - name: spinal-organ-network-sample
         image: docker.io/fjudith/spinal-organ-network_sample:1.0.1-alpine
         imagePullPolicy: Always
-        env:
-        - name: SPINALHUB_HOST
-          value: core-hub
-        - name: SPINALHUB_PORT
-          value: "8888"
+        envFrom:
+        - configMapRef:
+            name: spinal-core-hub-client
         resources: {}
 status: {}
