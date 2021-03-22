@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -ex
 
 # Setting default environnement variables values
 # -----------------------------------------------
