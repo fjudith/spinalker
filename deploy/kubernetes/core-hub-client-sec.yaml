@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: core-hub-client
+  namespace: spinalcom
+data:
+  # echo "168" | tr --delete '\n' | base64 -w 0
+  SPINAL_USER_ID: MTY4
+  # echo "JHGgcz45JKilmzknzelf65ddDadggftIO98P" | tr --delete '\n' | base64 -w 0
+  SPINAL_PASSWORD: SkhHZ2N6NDVKS2lsbXprbnplbGY2NWRkRGFkZ2dmdElPOThQ

@@ -27,7 +27,9 @@ spec:
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
-            name: spinal-core-hub-client
+            name: core-hub-client
+        - secretRef:
+            name: core-hub-client
         ports:
         - name: http
           containerPort: 4025

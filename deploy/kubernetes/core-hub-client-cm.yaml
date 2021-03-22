@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: spinal-core-hub-client
+  name: core-hub-client
   namespace: spinalcom
 data:
   SPINALHUB_HOST: core-hub
