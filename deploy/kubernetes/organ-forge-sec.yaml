@@ -6,9 +6,15 @@ metadata:
 data:
   # echo "tIsoMvTJrMYQXcavxgv7k27q2aMm1jgZ" | base64 -w 0
   CLIENT_ID: dElzb012VEpyTVlRWGNhdnhndjdrMjdxMmFNbTFqZ1oK
+  
   # echo "168" | tr --delete '\n' | base64 -w 0
   SPINAL_USER_ID: MTY4
+  
   # echo "JHGgcz45JKilmzknzelf65ddDadggftIO98P" | tr --delete '\n' | base64 -w 0
-  SPINAL_PASSWORD: SkhHZ2N6NDVKS2lsbXprbnplbGY2NWRkRGFkZ2dmdElPOThQ
+  # SPINAL_PASSWORD: SkhHZ2N6NDVKS2lsbXprbnplbGY2NWRkRGFkZ2dmdElPOThQ
+
+  # echo "6Y6Wv8nuJ" | tr --delete '\n' | base64 -w 0
+  SPINAL_PASSWORD: Nlk2V3Y4bnVK
+
   # echo "2000" | tr --delete '\n' | base64 -w 0
   INTERVAL: MjAwMA==

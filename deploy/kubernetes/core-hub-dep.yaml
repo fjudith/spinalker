@@ -37,9 +37,9 @@ spec:
           containerPort: 8890
         resources: {}
         volumeMounts:
-        - mountPath: /usr/share/spinal-organ-dump_manager/memory
+        - mountPath: /usr/share/app/memory
           name: memory
-        - mountPath: /usr/share/spinal-organ-dump_manager/memory/viewerForgeFiles
+        - mountPath: /usr/share/app/memory/viewerForgeFiles
           name: viewer
       volumes:
       - name: memory

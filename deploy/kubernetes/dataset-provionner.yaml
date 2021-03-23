@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: core-hub-dataset-env
+  name: dataset-provisionner-env
   namespace: spinalcom
 data:
   # echo "<value>" | tr --delete '\n' | base64 -w 0

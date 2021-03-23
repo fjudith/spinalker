@@ -6,5 +6,9 @@ metadata:
 data:
   # echo "168" | tr --delete '\n' | base64 -w 0
   SPINAL_USER_ID: MTY4
+  
   # echo "JHGgcz45JKilmzknzelf65ddDadggftIO98P" | tr --delete '\n' | base64 -w 0
-  SPINAL_PASSWORD: SkhHZ2N6NDVKS2lsbXprbnplbGY2NWRkRGFkZ2dmdElPOThQ
+  # SPINAL_PASSWORD: SkhHZ2N6NDVKS2lsbXprbnplbGY2NWRkRGFkZ2dmdElPOThQ
+
+  # echo "6Y6Wv8nuJ" | tr --delete '\n' | base64 -w 0
+  SPINAL_PASSWORD: Nlk2V3Y4bnVK
