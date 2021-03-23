@@ -24,7 +24,6 @@ if ! [ -f ${APP_PATH}/spinal-organ-network_sample/config.json5 ]; then
     sed -i "s#__SPINAL_DTWIN_PATH__#${SPINAL_DTWIN_PATH}#g" ${APP_PATH}/spinal-organ-network_sample/config.json5
     
     ln -sf ${APP_PATH}/spinal-organ-network_sample/config.json5 ${APP_PATH}/config.json5
-    cat ${APP_PATH}/config.json5
 fi
 
 if ! [ -f ${APP_PATH}/spinal-organ-network_sample/.config.json ]; then
