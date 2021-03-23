@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: core-hub-dataset
+  namespace: spinalcom
+spec:
+  template:
+    spec:
+      containers:
+      - name: download-extractor
+        image:  docker.io/fjudith/spinal-core-hub-dataset:latest
+        imagePullPolicy: Always
+        env: 
+        - name: MINIO_ENABLED
+          value: "true"
+        envFrom:
+        - secretRef:
+            name: dataset-env
+        volumeMounts:
+        - mountPath: /tmp/memory
+          name: memory
+        - mountPath: /tmp/memory/viewerForgeFiles
+          name: viewer
+      restartPolicy: Never
+      volumes:
+      - name: memory
+        persistentVolumeClaim:
+          claimName: core-hub-data
+      - name: viewer
+        persistentVolumeClaim:
+          claimName: core-hub-viewer
+  backoffLimit: 4
