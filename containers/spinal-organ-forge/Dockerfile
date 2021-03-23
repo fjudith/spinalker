@@ -53,7 +53,7 @@ COPY ./scripts/entrypoint.sh ./entrypoint.sh
 
 RUN rm -f ${APP_PATH}/spinal-organ-forge/.config.json && \
     chmod +x ./entrypoint.sh && \
-    chown -R ${USER}:${GROUP} ${APP_PATH}/spinal-organ-dump_manager
+    chown -R ${USER}:${GROUP} ${APP_PATH}/spinal-organ-forge
 
 ENTRYPOINT [ "./entrypoint.sh" ]
 
