@@ -17,7 +17,7 @@ ENV APP_PATH="/usr/share" \
     GROUP="spinalhub" \
     GROUPID="10001"
 
-RUN addgroup -g ${GROUPID} -S ${GROUP} && adduser -u ${USERID} -G ${GROUP} -S ${GROUP} && \
+RUN addgroup -g ${GROUPID} -S ${GROUP} && adduser -u ${USERID} -G ${GROUP} -S ${GROUP} --system && \
     apk add --update --no-cache curl ca-certificates && \
     mkdir -vp ${APP_PATH}/app/memory
 
