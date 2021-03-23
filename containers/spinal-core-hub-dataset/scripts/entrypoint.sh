@@ -36,9 +36,6 @@ cd ${APP_PATH}/memory/
 echo "Extracting archive"
 tar xvzf ${SPINAL_ARCHIVE}
 
-echo "Updating permission"
-chown -R ${USER}:${GROUP} ${APP_PATH}/memory/
-
 echo "Remove downloaded archive"
 rm -vf ${SPINAL_ARCHIVE}
 
