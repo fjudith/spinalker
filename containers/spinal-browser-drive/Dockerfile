@@ -19,6 +19,8 @@ RUN apk add --update --no-cache git python build-base util-linux && \
 
 WORKDIR ${APP_PATH}/spinal-browser-drive
 
+RUN ["npm", "run", "postinstall"]
+
 # -----------------------------------------------
 # Production
 # -----------------------------------------------
