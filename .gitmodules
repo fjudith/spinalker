@@ -85,3 +85,6 @@
 [submodule "src/spinal-env-viewer-library"]
 	path = src/spinal-env-viewer-library
 	url = https://github.com/spinalcom/spinal-env-viewer-library
+[submodule "src/spinal-core-connectorjs"]
+	path = src/spinal-core-connectorjs
+	url = https://github.com/spinalcom/spinal-core-connectorjs
