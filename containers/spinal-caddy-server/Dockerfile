@@ -38,6 +38,7 @@ COPY --from=graph ${APP_PATH}/Spinal-browser-graph-inspector/www ./graph-inspect
 COPY --from=drive ${APP_PATH}/spinal-browser-drive/icons ./icons/
 COPY --from=spinaltwin ${APP_PATH}/spinal-browser-spinaltwin/www ./spinaltwin/
 COPY --from=user_role_manager ${APP_PATH}/spinal-browser-user_role_manager/www ./user_role_manager/
+COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/www ./viewer/
 # Templates
 COPY --from=env_admin_panel_hub_status ${APP_PATH}/spinal-env-admin-panel-hub-status/templates ./templates/
 COPY --from=env_admin_panel_user_manager ${APP_PATH}/spinal-env-admin-panel-user-manager/templates ./templates/

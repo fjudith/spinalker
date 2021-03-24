@@ -14,11 +14,12 @@ RUN apk add --update --no-cache git python build-base util-linux && \
     cd ${APP_PATH} && \
     git clone https://github.com/spinalcom/spinal-browser-viewer && \
     cd ${APP_PATH}/spinal-browser-viewer && \
-    npm install
+    npm install && \
+    npm run build
 
 WORKDIR ${APP_PATH}/spinal-browser-viewer
 
-RUN ["npm", "run", "build"]
+RUN ["node", "create_viewer_env.js"]
 
 # -----------------------------------------------
 # Production
