@@ -72,8 +72,7 @@ COPY templates/Caddyfile.tpl /etc/caddy/Caddyfile
 COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
 COPY ./scripts/entrypoint.sh /entrypoint.sh
 
-RUN mdir -p 
-    ln -sf ${APP_PATH}/spinal-http-server ./html && \
+RUN ln -sf ${APP_PATH}/spinal-http-server ./html && \
     ln -sf ${APP_PATH}/spinal-http-server/graph-inspector ./graph && \
     chmod +x /entrypoint.sh 
 
