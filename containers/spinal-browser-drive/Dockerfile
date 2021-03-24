@@ -15,11 +15,13 @@ RUN apk add --update --no-cache git python build-base util-linux && \
     chmod +x $(pwd)/spinal-browser-drive/create_drive_env.js && \
     ln -s $(pwd)/spinal-browser-drive/create_drive_env.js /usr/local/bin/create_drive_env && \
     cd ${APP_PATH}/spinal-browser-drive && \
-    npm install
+    npm install && \
+    node bin/build.js
 
 WORKDIR ${APP_PATH}/spinal-browser-drive
 
 RUN ["npm", "run", "postinstall"]
+
 
 # -----------------------------------------------
 # Production
