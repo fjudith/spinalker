@@ -52,6 +52,7 @@ COPY --from=drive ${APP_PATH}/spinal-browser-drive/.browser_organs/lib ./lib/
 COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/.browser_organs/lib ./lib/
 # Patch
 COPY --from=connectorjs ${APP_PATH}/spinal-core-connectorjs/lib ./lib/
+COPY --from=connectorjs ${APP_PATH}/spinal-core-connectorjs/lib ./drive/drive/js/spinal-core-connectorjs/lib/
 
 # -----------------------------------------------
 # Production
