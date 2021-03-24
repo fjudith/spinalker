@@ -25,6 +25,7 @@ jobs:
     strategy:
       matrix:
         image:
+          - spinal-core-connectorjs
           - spinal-core-hub
           - spinal-organ-dump_manager
           - spinal-organ-forge
