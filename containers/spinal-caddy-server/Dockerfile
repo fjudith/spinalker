@@ -75,7 +75,7 @@ ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
-COPY --from=caddy /go/src/app/caddycmd/caddy/caddy /usr/bin/caddy
+COPY --from=caddy /go/src/app/caddy/cmd/caddy/caddy /usr/bin/caddy
 COPY --from=builder ${APP_PATH}/spinal-http-server ${APP_PATH}/spinal-http-server/
 
 WORKDIR ${APP_PATH}/spinal-http-server
