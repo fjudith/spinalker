@@ -15,7 +15,7 @@ root * /usr/share/spinal-http-server/
 
 # Enable the static file server.
 # https://caddyserver.com/docs/caddyfile/directives/file_server
-file_server browse
+# file_server browse
 
 # Another common task is to set up a reverse proxy:
 # reverse_proxy localhost:8080
