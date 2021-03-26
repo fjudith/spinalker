@@ -64,8 +64,7 @@ WORKDIR /go/src/app
 
 RUN git clone "https://github.com/caddyserver/caddy.git" && \
     cd caddy/cmd/caddy/ && \
-    go build && \
-    chmod +x caddy
+    go build -trimpath -o caddy-linux-amd64
 
 # -----------------------------------------------
 # Production
@@ -77,7 +76,7 @@ ENV APP_PATH="/usr/share"
 WORKDIR ${APP_PATH}
 
 # Caddy devel build
-COPY --from=caddy /go/src/app/caddy/cmd/caddy/caddy /usr/bin/caddy
+COPY --from=caddy /go/src/app/caddy/cmd/caddy/caddy-linux-amd64 /usr/bin/caddy
 RUN chmod +x /usr/bin/caddy
 
 COPY --from=builder ${APP_PATH}/spinal-http-server ${APP_PATH}/spinal-http-server/
