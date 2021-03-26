@@ -21,4 +21,4 @@ RUN apk add --update --no-cache git python build-base util-linux && \
 WORKDIR ${APP_PATH}/spinal-browser-viewer
 
 # RUN ["node", "create_viewer_env.js", "--watcher", "&", "sleep 20"]
-RUN ["forever", "start", "create_view_env.js", "--watcher", "&&", "sleep 30"]
+RUN ["forever", "start", "create_viewer_env.js", "--watcher", "&&", "sleep 30"]
