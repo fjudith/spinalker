@@ -19,7 +19,7 @@ FROM docker.io/fjudith/spinal-browser-viewer:2.0.6-alpine as browser_viewer
 # FROM docker.io/fjudith/spinal-core-connectorjs:2.4.1-alpine as connectorjs
 
 
-FROM node:12-alpine as builder
+FROM docker.io/amd64:3 as static_content
 
 ENV APP_PATH="/usr/share"
 
@@ -77,7 +77,7 @@ WORKDIR ${APP_PATH}
 COPY --from=caddy_builder /usr/bin/caddy /usr/local/bin/
 RUN chmod +x /usr/bin/caddy
 
-COPY --from=builder ${APP_PATH}/spinal-http-server ${APP_PATH}/spinal-http-server/
+COPY --from=static_content ${APP_PATH}/spinal-http-server ${APP_PATH}/spinal-http-server/
 
 WORKDIR ${APP_PATH}/spinal-http-server
 
