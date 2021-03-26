@@ -58,7 +58,7 @@ COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/.browser_organs/lib
 # -----------------------------------------------
 # Production
 # -----------------------------------------------
-FROM docker.io/amd64/caddy:2.4.0-beta.1-alpine
+FROM docker.io/library/caddy:alpine
 
 ENV APP_PATH="/usr/share"
 

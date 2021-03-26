@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: contour
+    kubernetes.io/tls-acme: "true"
+  name: http-server
+  namespace: spinalcom
+spec:
+  rules:
+  - host: spinalker.testruction.io
+    http:
+      paths:
+      - backend:
+          service:
+            name: http-server
+            port:
+              number: 8892
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - spinalker.testruction.io
+    secretName: spinalcom-prod-cert
