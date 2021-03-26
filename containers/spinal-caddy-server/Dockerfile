@@ -56,14 +56,26 @@ COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/.browser_organs/lib
 # COPY --from=connectorjs ${APP_PATH}/spinal-core-connectorjs/lib ./drive/js/node_modules/spinal-core-connectorjs/lib/
 
 # -----------------------------------------------
+# Caddy nightly build
+# -----------------------------------------------
+FROM docker.io/amd64/golang:1.16.2-buster as caddy
+
+WORKDIR /go/src/app
+
+RUN git clone "https://github.com/caddyserver/caddy.git" && \
+    cd caddy/cmd/caddy/ && \
+    go build
+
+# -----------------------------------------------
 # Production
 # -----------------------------------------------
-FROM docker.io/library/caddy:alpine
+FROM docker.io/amd64/caddy:2.4.0-beta.1-alpine
 
 ENV APP_PATH="/usr/share"
 
 WORKDIR ${APP_PATH}
 
+COPY --from=caddy /go/src/app/cmd/caddy/caddy /usr/bin/caddy
 COPY --from=builder ${APP_PATH}/spinal-http-server ${APP_PATH}/spinal-http-server/
 
 WORKDIR ${APP_PATH}/spinal-http-server
