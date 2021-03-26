@@ -64,7 +64,8 @@ WORKDIR /go/src/app
 
 RUN git clone "https://github.com/caddyserver/caddy.git" && \
     cd caddy/cmd/caddy/ && \
-    go build
+    go build && \
+    chmod +x caddy
 
 # -----------------------------------------------
 # Production
