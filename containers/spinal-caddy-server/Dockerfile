@@ -58,7 +58,7 @@ COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/.browser_organs/lib
 # -----------------------------------------------
 # Caddy nightly build
 # -----------------------------------------------
-FROM docker.io/amd64/caddy:2.4.0-beta.1-builder as caddy_builder
+FROM docker.io/amd64/caddy:2.4.0-beta.1-builder-alpine as caddy_builder
 
 ENV CADDY_VERSION=0018b9be0d2e409cd80367c9e8403188723d0996
 
