@@ -58,13 +58,11 @@ COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/.browser_organs/lib
 # -----------------------------------------------
 # Caddy nightly build
 # -----------------------------------------------
-FROM docker.io/amd64/golang:1.16.2-buster as caddy
+FROM docker.io/amd64/caddy:2.4.0-beta.1-builder as caddy_builder
 
-WORKDIR /go/src/app
+ENV CADDY_VERSION=master
 
-RUN git clone "https://github.com/caddyserver/caddy.git" && \
-    cd caddy/cmd/caddy/ && \
-    go build -trimpath -o caddy-linux-amd64
+RUN xcaddy build
 
 # -----------------------------------------------
 # Production
@@ -76,7 +74,7 @@ ENV APP_PATH="/usr/share"
 WORKDIR ${APP_PATH}
 
 # Caddy devel build
-COPY --from=caddy /go/src/app/caddy/cmd/caddy/caddy-linux-amd64 /usr/bin/caddy
+COPY --from=caddy /usr/bin/caddy /usr/local/bin/
 RUN chmod +x /usr/bin/caddy
 
 COPY --from=builder ${APP_PATH}/spinal-http-server ${APP_PATH}/spinal-http-server/
@@ -95,4 +93,4 @@ RUN ln -sf ${APP_PATH}/spinal-http-server ./html && \
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 
-CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
+CMD ["/usr/local/bin/caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
