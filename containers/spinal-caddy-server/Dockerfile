@@ -60,7 +60,7 @@ COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/.browser_organs/lib
 # -----------------------------------------------
 FROM docker.io/amd64/caddy:2.4.0-beta.1-builder as caddy_builder
 
-ENV CADDY_VERSION=master
+ENV CADDY_VERSION=0018b9be0d2e409cd80367c9e8403188723d0996
 
 RUN xcaddy build
 
@@ -74,7 +74,7 @@ ENV APP_PATH="/usr/share"
 WORKDIR ${APP_PATH}
 
 # Caddy devel build
-COPY --from=caddy /usr/bin/caddy /usr/local/bin/
+COPY --from=caddy_builder /usr/bin/caddy /usr/local/bin/
 RUN chmod +x /usr/bin/caddy
 
 COPY --from=builder ${APP_PATH}/spinal-http-server ${APP_PATH}/spinal-http-server/
