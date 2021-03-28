@@ -17,8 +17,7 @@ RUN apk add --update --no-cache git python build-base util-linux && \
     npm install browserify exorcist fs path babel-preset-stage-3 && \
     npm install && \
     npm run build && \
-    forever start create_viewer_env.js --watcher
+    forever start create_viewer_env.js --watcher && \
+    sleep 30
 
 WORKDIR ${APP_PATH}/spinal-browser-viewer
-
-RUN ["sleep", "30"]

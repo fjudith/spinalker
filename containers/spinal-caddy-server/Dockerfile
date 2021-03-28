@@ -14,7 +14,7 @@ FROM docker.io/fjudith/spinal-env-drive-plugin-digital_twin:1.0.2-alpine as env_
 FROM docker.io/fjudith/spinal-env-drive-plugin-version_manager:1.0.7-alpine as env_drive_plugin_version_manager
 FROM docker.io/fjudith/spinal-env-drive-plugin-visa:1.0.3-alpine as env_drive_plugin_visa
 # Libs
-FROM docker.io/fjudith/spinal-browser-viewer:2.0.6-alpine as browser_viewer
+FROM docker.io/fjudith/spinal-browser-viewer:2.0.7-alpine as browser_viewer
 # Patch
 # FROM docker.io/fjudith/spinal-core-connectorjs:2.4.1-alpine as connectorjs
 
