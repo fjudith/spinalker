@@ -13,32 +13,10 @@ RUN apk add --update --no-cache git python build-base util-linux && \
     cd ${APP_PATH} && \
     git clone https://github.com/spinalcom/spinal-browser-admin && \
     cd ${APP_PATH}/spinal-browser-admin && \
-    npm install
+    npm install browserify exorcist fs path babel-preset-stage-3 && \
+    npm install && \
+    npm run build && \
+    forever start create_viewer_env.js --watcher && \
+    sleep 30
 
 WORKDIR ${APP_PATH}/spinal-browser-admin
-
-# -----------------------------------------------
-# Production
-# -----------------------------------------------
-FROM keymetrics/pm2:12-alpine
-
-ENV APP_PATH="/usr/share"
-
-WORKDIR ${APP_PATH}
-
-COPY --from=builder ${APP_PATH}/spinal-browser-admin ${APP_PATH}/spinal-browser-admin/
-
-WORKDIR ${APP_PATH}/spinal-browser-admin
-
-COPY ./templates/.config.json.tpl /tmp/.config.json.tpl
-COPY ./scripts/launch.config.js ./launch.config.js
-COPY ./scripts/entrypoint.sh ./entrypoint.sh
-
-RUN chmod +x ./entrypoint.sh && \
-    ln -s $(pwd)/nerve-center/spinalhub /spinalhub
-
-ENTRYPOINT [ "./entrypoint.sh" ]
-
-EXPOSE 8888 8889 8890
-
-CMD ["pm2-runtime", "start", "launch.config.js"]

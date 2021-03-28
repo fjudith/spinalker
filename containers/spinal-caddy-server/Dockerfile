@@ -48,9 +48,10 @@ COPY --from=env_drive_plugin_digital_twin ${APP_PATH}/spinal-env-drive-plugin-di
 COPY --from=env_drive_plugin_version_manager ${APP_PATH}/spinal-env-drive-plugin-version_manager/templates ./templates/
 COPY --from=env_drive_plugin_visa ${APP_PATH}/spinal-env-drive-plugin-visa/templates ./templates/
 # Libs
+COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/.browser_organs/lib ./lib/
 COPY --from=admin ${APP_PATH}/spinal-browser-admin/.browser_organs/lib ./lib/
 COPY --from=drive ${APP_PATH}/spinal-browser-drive/.browser_organs/lib ./lib/
-COPY --from=browser_viewer ${APP_PATH}/spinal-browser-viewer/.browser_organs/lib ./lib/
+
 # Patch
 # COPY --from=connectorjs ${APP_PATH}/spinal-core-connectorjs/lib ./lib/
 # COPY --from=connectorjs ${APP_PATH}/spinal-core-connectorjs/lib ./drive/js/node_modules/spinal-core-connectorjs/lib/
