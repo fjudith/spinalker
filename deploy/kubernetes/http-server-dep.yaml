@@ -36,4 +36,11 @@ spec:
           - name: http
             containerPort: 8892
         resources: {}
+        volumeMounts:
+        - mountPath: /usr/share/spinal-http-server/viewerForgeFiles
+          name: viewer
+      volumes:
+      - name: viewer
+        persistentVolumeClaim:
+          claimName: core-hub-viewer
 status: {}

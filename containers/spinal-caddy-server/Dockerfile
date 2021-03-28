@@ -19,7 +19,7 @@ FROM docker.io/fjudith/spinal-browser-viewer:2.0.6-alpine as browser_viewer
 # FROM docker.io/fjudith/spinal-core-connectorjs:2.4.1-alpine as connectorjs
 
 
-FROM docker.io/amd64:3 as static_content
+FROM docker.io/amd64/alpine:3 as static_content
 
 ENV APP_PATH="/usr/share"
 
