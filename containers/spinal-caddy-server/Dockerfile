@@ -53,8 +53,7 @@ COPY --from=admin ${APP_PATH}/spinal-browser-admin/.browser_organs/lib ./lib/
 COPY --from=drive ${APP_PATH}/spinal-browser-drive/.browser_organs/lib ./lib/
 
 # Patch
-# COPY --from=connectorjs ${APP_PATH}/spinal-core-connectorjs/lib ./lib/
-# COPY --from=connectorjs ${APP_PATH}/spinal-core-connectorjs/lib ./drive/js/node_modules/spinal-core-connectorjs/lib/
+COPY files/lib ./lib/
 
 # -----------------------------------------------
 # Caddy nightly build
