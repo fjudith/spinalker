@@ -17,7 +17,8 @@ RUN apk add --update --no-cache git python build-base util-linux && \
     cd ${APP_PATH}/spinal-browser-drive && \
     npm install browserify exorcist fs path babel-preset-stage-3 && \
     npm install && \
-    npm run build && \
+    make build && \
+    npm run postinstall && \
     forever start create_drive_env.js --watcher && \
     sleep 30
 
