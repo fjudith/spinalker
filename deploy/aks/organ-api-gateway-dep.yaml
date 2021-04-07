@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spinal-core
+    component: organ-api-gateway
+  name: organ-api-gateway
+  namespace: spinalcom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spinal-core
+      component: organ-api-gateway
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spinal-core
+        component: organ-api-gateway
+    spec:
+      containers:
+      - name: spinal-organ-api-gateway
+        image: docker.io/fjudith/spinal-organ-api-gateway:1.0.0-alpine
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: core-hub-client
+        - secretRef:
+            name: core-hub-client
+        ports:
+        - name: http
+          containerPort: 4025
+        - name: request
+          containerPort: 4026
+        resources: {}
+status: {}

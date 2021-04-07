@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dataset-provisioner-env
+  namespace: spinalcom
+data:
+  # echo "<value>" | tr --delete '\n' | base64 -w 0
+  S3_HOST: czMuZnItcGFyLnNjdy5jbG91ZA==
+  S3_BUCKET: Y29ubmVjdA==
+  S3_REGION: ZnItcGFy
+  S3_ACCESSKEY: U0NXWkVOUlc0MTZLMzJHMThXS1c=
+  S3_SECRETKEY: MDNmOGM1MTItOGQ5ZS00NWViLTk0Y2EtZTdkNGVkYmJhZTlm
+  SPINAL_ARCHIVE: bWVtb3J5LnRhci5neg==

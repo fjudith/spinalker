@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spinal-core
+    component: http-server
+  name: http-server
+  namespace: spinalcom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spinal-core
+      component: http-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spinal-core
+        component: http-server
+    spec:
+      containers:
+      - name: spinal-http-server
+        image: docker.io/fjudith/spinal-caddy-server:1.0.0-alpine
+        imagePullPolicy: Always
+        env:
+        - name: HUB_HOST
+          value: core-hub
+        - name: SPINALHUB_HOST
+          value: core-hub
+        - name: SPINALHUB_PORT
+          value: "8888"
+        ports:
+          - name: http
+            containerPort: 8892
+        resources: {}
+        volumeMounts:
+        - mountPath: /usr/share/spinal-http-server/viewerForgeFiles
+          name: viewer
+      volumes:
+      - name: viewer
+        persistentVolumeClaim:
+          claimName: core-hub-viewer
+status: {}

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spinal-core
+    component: organ-dump-manager
+  name: organ-dump-manager
+  namespace: spinalcom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spinal-core
+      component: organ-dump-manager
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spinal-core
+        component: organ-dump-manager
+    spec:
+      initContainers:
+      - name: init-service
+        image: alpine:3
+        command: ['sh', '-c', "until nc -vz core-hub 8888; do sleep 2; done"]
+      containers:
+      - name: spinal-organ-dump-manager
+        image: docker.io/fjudith/spinal-organ-dump_manager:1.0.0-alpine
+        imagePullPolicy: Always
+        resources: {}
+        volumeMounts:
+        - mountPath: /usr/nerve-center/memory
+          name: memory
+      volumes:
+      - name: memory
+        persistentVolumeClaim:
+          claimName: core-hub-data
+status: {}

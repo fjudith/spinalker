@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spinal-core
+    component:  organ-forge
+  name: organ-forge
+  namespace: spinalcom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spinal-core
+      component:  organ-forge
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spinal-core
+        component:  organ-forge
+    spec:
+      initContainers:
+      - name: init-service
+        image: alpine:3
+        command: ['sh', '-c', "until nc -vz core-hub 8888; do sleep 2; done"]
+      containers:
+      - name: spinal-organ-forge
+        image: docker.io/fjudith/spinal-organ-forge:1.1.5-alpine
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: core-hub-client
+        - secretRef:
+            name: organ-forge-env
+        resources: {}
+        volumeMounts:
+        - mountPath: /usr/share/spinal-organ-forge/viewerForgeFiles
+          name: viewer
+      volumes:
+      - name: viewer
+        persistentVolumeClaim:
+          claimName: core-hub-viewer
+status: {}

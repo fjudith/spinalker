@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spinal-core
+    component: core-hub
+  name: core-hub
+  namespace: spinalcom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spinal-core
+      component: core-hub
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spinal-core
+        component: core-hub
+    spec:
+      containers:
+      - name: spinal-core-hub
+        image: docker.io/fjudith/spinal-core-hub:3.1.0-alpine
+        imagePullPolicy: Always
+        env:
+          - name: HUB_VERBOSE
+            value: "true"
+        ports:
+        - name: hub-port
+          containerPort: 8888
+        - name: super-port
+          containerPort: 8889
+        - name: soda-port
+          containerPort: 8890
+        resources: {}
+        volumeMounts:
+        - mountPath: /usr/share/app/memory
+          name: memory
+        - mountPath: /usr/share/app/memory/viewerForgeFiles
+          name: viewer
+      volumes:
+      - name: memory
+        persistentVolumeClaim:
+          claimName: core-hub-data
+      - name: viewer
+        persistentVolumeClaim:
+          claimName: core-hub-viewer
+status: {}

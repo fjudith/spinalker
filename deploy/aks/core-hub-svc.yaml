@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: core-hub
+  namespace: spinalcom
+  labels:
+    app: spinal-core
+    component: core-hub
+spec:
+  selector:
+    app: spinal-core
+    component: core-hub
+  ports:
+    - name: hub-port
+      protocol: TCP
+      port: 8888
+      targetPort: 8888
+    - name: super-port
+      protocol: TCP
+      port: 8889
+      targetPort: 8889
+    - name: soda-port
+      protocol: TCP
+      port: 8890
+      targetPort: 8890
