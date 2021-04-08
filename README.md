@@ -8,6 +8,10 @@ This project aims to contenairize the Spinalcom Building operating system to imp
 * [Dockerfile Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 * [Building a trusted software supply chain](https://cd.foundation/blog/2020/07/07/devsecops-building-a-trusted-software-supply-chain/)
 
+## About Git submodules
+
+Git submodules are only referenced to track the various [SpinalCom repository](https://github.com/spinalcom), they are not actively used in container builds.
+
 ## Remove submodule
 
 To remove a submodule you need to:
