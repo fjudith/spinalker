@@ -12,7 +12,7 @@ This project aims to contenairize the Spinalcom Building operating system to imp
 
 Git submodules are only referenced to track the various [SpinalCom repository](https://github.com/spinalcom), they are not actively used in container builds.
 
-## Remove submodule
+## Remove submodules
 
 To remove a submodule you need to:
 
