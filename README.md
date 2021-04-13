@@ -12,6 +12,17 @@ This project aims to contenairize the Spinalcom Building operating system to imp
 
 Git submodules are only referenced to track the various [SpinalCom repository](https://github.com/spinalcom), they are not actively used in container builds.
 
+## Guidelines
+
+### Dataset restore
+
+In certain failure conditions, the `memory/dump.db` file can get deleted by the `core-hub` pod.
+Run the following command to restart the `dataset-provisioner` job.
+
+```bash
+kubectl -n spinalcom get job "dataset-provisioner" -o json | jq 'del(.spec.selector)' | jq 'del(.spec.template.metadata.labels)' | kubectl replace --force -f -
+```
+
 ## Remove submodules
 
 To remove a submodule you need to:
