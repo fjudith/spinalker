@@ -134,7 +134,7 @@ Error: buildx call failed with: error: failed to solve: rpc error: code = Unknow
 
 # Container 6 : Env-Viewer Container Images
 
-### 1. Job : Build OCI image: spinal-env-viewer-context-geographic-service
+### Dernier Build : Build OCI image: spinal-env-viewer-context-geographic-service
 
 docker.io/fjudith/spinal-env-viewer-context-geographic-service:e6b13561b922edc4510ac2a345fb784c0a3fb75b (alpine 3.11.8)
 =======================================================================================================================
@@ -144,6 +144,3 @@ usr/share/spinal-env-viewer-context-geographic-service/package-lock.json
 ========================================================================
 Total: 0 (HIGH: 0, CRITICAL: 0)
 
-### 2. Job : Build OCI image: spinal-env-viewer-context-geographic-service
-
-[test](#container-5:-env-admin-container-images)
