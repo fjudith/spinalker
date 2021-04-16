@@ -1,6 +1,6 @@
 # Container 1 : Browser Container Images
 
-### 1. Job : Build OCI image: spinal-browser-admin
+### Dernier Build : Build OCI image: spinal-browser-admin
 
 docker.io/fjudith/spinal-browser-admin:3c77aac5506abae0b0887d9182132732b9e1fb13 (alpine 3.11.9)
 ============================================================================================================
@@ -27,20 +27,6 @@ Total: 0 (HIGH: 0, CRITICAL: 0)
 Conteneur                | HIGH | CRITICAL
 ------------------------ |------|-------
 Browser Container Images | 0    | 1
-
-### 2. Job : Build OCI image: spinal-env-viewer-plugin-forge
-
-### 3. Job : Build OCI image: spinal-env-viewer-plugin-forge
-
-### 4. Job : Build OCI image: spinal-env-viewer-plugin-forge
-
-### 5. Job : Build OCI image: spinal-env-viewer-plugin-forge
-
-### 6. Job : Build OCI image: spinal-env-viewer-plugin-forge
-
-### 7. Job : Build OCI image: spinal-env-viewer-plugin-forge
-
-### 8. Job : Build OCI image: spinal-env-viewer-plugin-forge
 
 # Container 2 : Container Images (dynamic submodules)
 
@@ -137,10 +123,13 @@ Total: 0 (HIGH: 0, CRITICAL: 0)
 
 ---
 
-# Container 5: Env-Admin Container Images
+# Container 5: Env Admin Container Images
 
 ### Dernier Build : Build OCI image: spinal-env-admin-panel-hub-status
 
+Error: buildx call failed with: error: failed to solve: rpc error: code = Unknown desc = failed to solve with frontend dockerfile.v0: failed to create LLB definition: dockerfile parse error line 5: WORKDIR requires exactly one argument
+
+"piste d'investigation: revision du Dockerfile: regarder les arguments du WORDIR"
 ---
 
 # Container 6 : Env-Viewer Container Images
@@ -155,62 +144,6 @@ usr/share/spinal-env-viewer-context-geographic-service/package-lock.json
 ========================================================================
 Total: 0 (HIGH: 0, CRITICAL: 0)
 
-### 2. Job : Build OCI image: spinal-env-viewer-plugin-documentation-service
+### 2. Job : Build OCI image: spinal-env-viewer-context-geographic-service
 
-docker.io/fjudith/spinal-env-viewer-plugin-documentation-service:e6b13561b922edc4510ac2a345fb784c0a3fb75b (alpine 3.11.8)
-=========================================================================================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-usr/share/spinal-env-viewer-plugin-documentation-service/package-lock.json
-==========================================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-### 3. Job : Build OCI image: spinal-env-viewer-plugin-forge
-
-docker.io/fjudith/spinal-env-viewer-plugin-forge:e6b13561b922edc4510ac2a345fb784c0a3fb75b (alpine 3.11.8)
-=========================================================================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-usr/share/spinal-env-viewer-plugin-forge/package-lock.json
-==========================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-### 4. Job : Build OCI image: spinal-env-viewer-plugin-generate-spatial-reference
-
-docker.io/fjudith/spinal-env-viewer-plugin-generate-spatial-reference:e6b13561b922edc4510ac2a345fb784c0a3fb75b (alpine 3.11.8)
-==============================================================================================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-usr/share/spinal-env-viewer-plugin-generate-spatial-reference/package-lock.json
-===============================================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-### 5. Job : Build OCI image: spinal-env-viewer-plugin-graph_viewer
-
-docker.io/fjudith/spinal-env-viewer-plugin-graph_viewer:e6b13561b922edc4510ac2a345fb784c0a3fb75b (alpine 3.11.8)
-================================================================================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-usr/share/spinal-core-system/package-lock.json
-==============================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-usr/share/spinal-env-viewer-plugin-graph_viewer/package-lock.json
-=================================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-### 6. Job : Build OCI image: spinal-env-viewer-plugin-item_model_selector
-
-docker.io/fjudith/spinal-env-viewer-plugin-item_model_selector:e6b13561b922edc4510ac2a345fb784c0a3fb75b (alpine 3.11.8)
-=======================================================================================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-usr/share/spinal-core-system/package-lock.json
-==============================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-usr/share/spinal-env-viewer-plugin-item_model_selector/package-lock.json
-========================================================================
-Total: 0 (HIGH: 0, CRITICAL: 0)
-
-
+[test](#container-5:-env-admin-container-images)
