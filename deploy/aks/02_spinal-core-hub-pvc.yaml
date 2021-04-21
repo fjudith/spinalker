@@ -13,7 +13,7 @@ spec:
   resources:
     requests:
       storage: 20Gi
-  storageClassName: "azurefile-csi" # Empty string must be explicitly set otherwise default StorageClass will be set
+  storageClassName: "azurefile-csi-smb" # Empty string must be explicitly set otherwise default StorageClass will be set
   # selector:
   #   matchLabels:
   #     app: spinalcore
@@ -34,7 +34,7 @@ spec:
   resources:
     requests:
       storage: 20Gi
-  storageClassName: "azurefile-csi" # Empty string must be explicitly set otherwise default StorageClass will be set
+  storageClassName: "azurefile-csi-smb" # Empty string must be explicitly set otherwise default StorageClass will be set
   # selector:
   #   matchLabels:
   #     app: spinalcore
