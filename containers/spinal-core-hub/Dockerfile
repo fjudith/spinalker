@@ -1,4 +1,4 @@
-FROM alpine:3 
+FROM debian:latest 
 
 LABEL maintainer="Florian JUDITH <florian.judith.b@gmail.com>" \
       org.label-schema.url="https://github.com/fjudith/spinalker/blob/master/README.md" \
@@ -17,9 +17,17 @@ ENV APP_PATH="/usr/share" \
     GROUP="spinalhub" \
     GROUPID="10001"
 
-RUN addgroup -g ${GROUPID} -S ${GROUP} && adduser -u ${USERID} -G ${GROUP} -S ${GROUP} --system && \
-    apk add --update --no-cache curl ca-certificates && \
-    mkdir -vp ${APP_PATH}/app/memory
+# RUN addgroup -g ${GROUPID} -S ${GROUP} && adduser -u ${USERID} -G ${GROUP} -S ${USER} --system && \
+#     apk add --update --no-cache curl ca-certificates && \
+#     mkdir -vp ${APP_PATH}/app/memory
+RUN groupadd -g ${GROUPID} ${GROUP} && useradd -u ${USERID} -g ${GROUPID} ${USER} && \
+    apt-get update -y && \
+    apt-get install -y --no-install-recommends \
+        curl ca-certificates && \
+    apt-get autoremove -y --purge && \
+    apt-get clean && \
+    rm -r /var/lib/apt/lists/*
+
 
 WORKDIR ${APP_PATH}/app
 
