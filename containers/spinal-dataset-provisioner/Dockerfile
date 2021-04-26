@@ -29,7 +29,6 @@ RUN curl -OL https://dl.min.io/client/mc/release/linux-amd64/mc.sha256sum && \
     chmod +x mc && \
     mv ./mc /usr/local/bin/
 
-
 COPY scripts/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
