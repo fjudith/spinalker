@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: installer-config
+  namespace: spinalcom-system
+data:
+  install.sh: |
+    #!/bin/bash
+    # Update and install packages
+    id
+    apt-get update -y
+    apt-get install -y \
+    build-essential \
+    linux-headers-$(uname -r) \
+    linux-headers-azure
