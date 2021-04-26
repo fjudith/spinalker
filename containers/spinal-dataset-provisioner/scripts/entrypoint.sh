@@ -37,7 +37,7 @@ echo "Extracting archive"
 tar xvzf ${SPINAL_ARCHIVE}
 
 echo "Updating permission"
-chmod -R 777 ${APP_PATH}/memory/
+chmod -R 777 ${APP_PATH}/memory/*
 
 echo "Remove downloaded archive"
 rm -vf ${SPINAL_ARCHIVE}
