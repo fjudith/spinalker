@@ -37,6 +37,7 @@ jobs:
           - spinal-http-server
           - spinal-organ-api-gateway
           - spinal-caddy-server
+          - spinal-dataset-provisioner
 
     steps:
       - uses: FranzDiebold/github-env-vars-action@v1.2.1
