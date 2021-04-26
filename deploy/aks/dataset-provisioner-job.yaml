@@ -10,6 +10,8 @@ spec:
       - name: download-extractor
         image:  docker.io/fjudith/spinal-dataset-provisioner:1.0.0-alpine
         imagePullPolicy: Always
+        securityContext:
+          privileged: true
         env: 
         - name: MINIO_ENABLED
           value: "true"
