@@ -5,12 +5,31 @@ metadata:
   name: azurefile-csi-smb
 provisioner: file.csi.azure.com
 mountOptions:
-  - dir_mode=0777
-  - file_mode=0777
+  # - noblocksend
+  # - unix
+  # - noperm
+  # - dir_mode=0777
+  # - file_mode=0777
+  # - nostrictsync
+  # - fsc
+  # - multiuser
+  # - mfsymlinks
+  # - nobrl
+  # - rwpidforward
+  # - nopersistenthandles
+  # - sfu
   # - uid=0
   # - gid=0
-  # - mfsymlinks
-  # - cache=strict
+  # - cache=none
+  # - persistenthandles
+  # - nounix
+  # - serverino
+  # - mapposix
+  # - rsize=1048576
+  # - wsize=1048576
+  # - mapchars
+  # - acl
+  # - actimeo=0
 parameters:
   skuName: Premium_LRS
 reclaimPolicy: Delete
