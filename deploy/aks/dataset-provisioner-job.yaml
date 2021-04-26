@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
       - name: download-extractor
-        image:  docker.io/fjudith/spinal-dataset-provisioner:latest
+        image:  docker.io/fjudith/spinal-dataset-provisioner:1.0.0-alpine
         imagePullPolicy: Always
         env: 
         - name: MINIO_ENABLED
