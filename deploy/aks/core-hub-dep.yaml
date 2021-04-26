@@ -21,6 +21,16 @@ spec:
         app: spinal-core
         component: core-hub
     spec:
+      initContainers:
+      - name: sysctl
+        image: 'docker.io/bitnami/bitnami-shell:10'
+        command:
+          - /bin/bash
+          - '-ec'
+          - |
+            sysctl -w vm.max_map_count=262144 && sysctl -w fs.file-max=65536 && sysctl -a
+        securityContext:
+          privileged: true
       containers:
       - name: spinal-core-hub
         image: docker.io/fjudith/spinal-core-hub:3.1.0-alpine
