@@ -19,7 +19,7 @@ ENV APP_PATH="/usr/share" \
     GROUPID="10001"
 
 RUN addgroup -g ${GROUPID} -S ${GROUP} && adduser -u ${USERID} -G ${GROUP} -S ${USER} --system && \
-    apk add --update --no-cache curl ca-certificates samba-client nfs-utils rpcbind && \
+    apk add --update --no-cache curl ca-certificates build-base && \
     mkdir -vp ${APP_PATH}/app/memory
 # RUN groupadd -g ${GROUPID} ${GROUP} && useradd -u ${USERID} -g ${GROUPID} ${USER} && \
 #     apt-get update -y && \
