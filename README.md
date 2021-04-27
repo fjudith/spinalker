@@ -14,6 +14,31 @@ Git submodules are only referenced to track the various [SpinalCom repository](h
 
 ## Guidelines
 
+### AKS Deployment
+
+The following guide describes the steps to acheive the Spinal-Core deployment in Azure Kubernetes Service.
+
+* Run the following commands to create the Kubernetes namespace and populate shared persitent volumes with the example dataset.
+
+```bash
+# Namespace
+kubectl apply -f deploy/aks/00_spinalcom-ns.yaml
+# Persistent volumes
+kubectl apply -f deploy/aks/01_azurefile-csi-nfs-sc.yaml
+kubectl apply -f deploy/aks/01_azurefile-csi-smb-sc.yaml
+kubectl apply -f deploy/aks/02_spinal-core-hub-pvc.yaml
+# Dataset provisionner
+kubectl apply -f deploy/aks/dataset-provisioner-sec.yaml
+kubectl apply -f deploy/aks/dataset-provisioner-job.yaml
+kubectl -n spinalcom wait --for=condition=complete --timeout=5m job/dataset-provisioner
+```
+
+* One the dataset provisioning completed, run the following command to deploy Spinal-Core's application services.
+
+```bash
+kubectl apply -f deploy/aks/
+```
+
 ### Dataset restore
 
 In certain failure conditions, the `memory/dump.db` file can get deleted by the `core-hub` pod.
