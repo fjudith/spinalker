@@ -43,10 +43,11 @@ COPY ./scripts/entrypoint.sh ./
 
 COPY ./scripts/entrypoint.sh ./entrypoint.sh
 
-RUN chmod +x ./entrypoint.sh && \
+RUN chown -R ${USER}:${GROUP} ${APP_PATH}/app && \
+    chmod +x ./entrypoint.sh && \
     chmod +x ${APP_PATH}/app/spinalhub && \
-    mkdir -vp ${APP_PATH}/app/memory/viewerForgeFile && \
-    chown -R ${USER}:${GROUP} ./ 
+    chown root:root ${APP_PATH}/app/spinalhub && \
+    mkdir -vp ${APP_PATH}/app/memory/viewerForgeFile
 
 EXPOSE 8888 8889 8890
 
