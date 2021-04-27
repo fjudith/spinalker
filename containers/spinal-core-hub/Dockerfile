@@ -36,7 +36,7 @@ WORKDIR ${APP_PATH}/app
 # Download spinalhub binary
 ENV SHA256="5a3b57d2ccc304b69e664a83a866e31a38f8366c65fbca8ea9b262127e607f8b"
 
-RUN curl -OL https://raw.githubusercontent.com/spinalcom/spinal-core-hub/master/spinalhub && \
+RUN curl -OL https://raw.githubusercontent.com/spinalcom/spinal-core-hub/v3.1.0/spinalhub && \
     echo "${SHA256}  spinalhub" | sha256sum -c -
 
 COPY ./scripts/entrypoint.sh ./
