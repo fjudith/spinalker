@@ -8,13 +8,13 @@ mountOptions:
   # - noblocksend
   # - unix
   # - noperm
-  # - dir_mode=0777
-  # - file_mode=0777
+  - dir_mode=0777
+  - file_mode=0777
   # - nostrictsync
   # - fsc
   # - multiuser
-  # - mfsymlinks
-  # - nobrl
+  - mfsymlinks
+  - nobrl
   # - rwpidforward
   # - nopersistenthandles
   # - sfu
